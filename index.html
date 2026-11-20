@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mostafa Ibrahime — Brand Strategist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* One visual world: white page, black type, work supplies the colour; orange only as a signal. */
+  --paper: #FFFFFF;
+  --ink: #0E0E0D;
+  --mute: #6B6A66;
+  --wash: #F0EFEC;
+  --signal: #145CD1;
+  --signal-ink: #145CD1;
+  --hover: #145CD1;
+  --font: 'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif;
+  --gap: 20px;
+  --radius: 20px;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--paper); color: var(--ink); }
+body { font-family: var(--font); font-weight: 300; font-size: 18px; line-height: 1.4; letter-spacing: -0.02em; -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+p, h1, h2, h3, ul, dl, dd { margin: 0; padding: 0; }
+ul { list-style: none; }
+h1, h2, h3 { font-weight: 300; text-wrap: balance; }
+:focus-visible { outline: 2px solid var(--signal); outline-offset: 4px; border-radius: 4px; }
+
+/* Header: fixed, inverts over imagery like Play */
+.hdr { position: fixed; inset: 0 0 auto 0; z-index: 50; display: flex; align-items: center; gap: 32px; padding: 18px var(--gap); color: #fff; mix-blend-mode: difference; font-size: 24px; letter-spacing: -0.02em; transition: transform .5s cubic-bezier(.19,1,.22,1); }
+.hdr.is-hidden { transform: translateY(-100%); }
+.hdr__mark { display: flex; align-items: center; gap: 14px; }
+.hdr__mark svg { width: 24px; height: 24px; }
+.hdr__page { opacity: .55; }
+.hdr nav { margin-left: auto; display: flex; gap: 28px; }
+.hdr nav a, .hdr nav button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; letter-spacing: inherit; }
+.hdr nav .is-on { text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 1px; }
+
+main { padding: 0 var(--gap); }
+.grid3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap); }
+
+/* Work index */
+.intro { padding: 200px 0 64px; }
+.intro h1 { grid-column: 1 / span 2; font-size: clamp(40px, 5.2vw, 76px); line-height: 1.02; letter-spacing: -0.035em; font-weight: 600; }
+.intro__big { grid-column: 1 / -1 !important; font-size: 12vw !important; display: inline-block; width: max-content; font-weight: 700 !important; letter-spacing: -0.045em !important; line-height: .9 !important; white-space: nowrap; margin-left: -0.04em; }
+.intro p { grid-column: 3; align-self: end; color: var(--mute); max-width: 34ch; }
+.svc { padding: 200px 0 120px; }
+.svc__head { align-items: end; padding-bottom: 64px; }
+.svc__head h2 { grid-column: 1 / span 2; font-size: clamp(40px, 5.2vw, 76px); line-height: 1.02; letter-spacing: -0.035em; font-weight: 400; }
+.svc__head p { grid-column: 3; color: var(--mute); max-width: 34ch; }
+.svc__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gap); }
+.svc__item figure { border-radius: var(--radius); overflow: hidden; aspect-ratio: 16 / 10; background: var(--wash); margin: 0 0 28px; }
+.svc__item figure img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.svc__item h3 { display: flex; gap: 18px; align-items: baseline; font-size: clamp(28px, 2.8vw, 40px); font-weight: 400; letter-spacing: -0.03em; line-height: 1.05; margin-bottom: 12px; }
+.svc__item h3 span { font-size: 15px; color: var(--mute); letter-spacing: 0; }
+.svc__lead { color: var(--mute); max-width: 44ch; margin-bottom: 24px; }
+.svc__list { list-style: none; columns: 2; column-gap: var(--gap); }
+.svc__list li { break-inside: avoid; padding: 11px 0; border-top: 1px solid rgba(0,0,0,.1); }
+.work__label { font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--mute); margin: 0 0 20px; }
+@media (max-width: 760px) { .svc__head h2, .svc__head p { grid-column: 1; } .svc__grid { grid-template-columns: 1fr; gap: 56px; } .svc__list { columns: 1; } }
+.mind { padding: 200px 0 120px; }
+.mind__steps { padding-top: 8px; }
+.mind__list { list-style: none; border-top: 1px solid rgba(0,0,0,.12); }
+.mind__item a { display: grid; grid-template-columns: 1.1fr 1fr 2.4fr auto; gap: var(--gap); align-items: baseline; padding: 26px 0; border-bottom: 1px solid rgba(0,0,0,.12); color: inherit; text-decoration: none; transition: padding .35s cubic-bezier(.19,1,.22,1); }
+.mind__item a:hover { padding-left: 14px; }
+.mind__name { font-size: clamp(22px, 2vw, 30px); font-weight: 400; letter-spacing: -0.03em; }
+.mind__from, .mind__go { color: var(--mute); font-size: 15px; }
+.mind__idea { max-width: 60ch; }
+@media (max-width: 760px) { .mind { padding-top: 120px; } .mind__item a { grid-template-columns: 1fr; gap: 6px; } }
+.st { padding: 200px 0 80px; }
+.st__head { padding-bottom: 72px; border-bottom: 1px solid rgba(0,0,0,.12); }
+.st__num { color: var(--mute); font-size: 15px; margin-bottom: 18px; }
+.st__num a { color: inherit; }
+.st__head h1 { font-size: clamp(48px, 6.4vw, 96px); line-height: .98; letter-spacing: -0.04em; font-weight: 600; }
+.st__meta { color: var(--mute); margin-top: 14px; }
+.st__qa { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gap); margin-top: 64px; }
+.st__qa span, .st__stmt span, .st__kick, .st__note span { display: block; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--mute); margin-bottom: 12px; }
+.st__qa p { font-size: clamp(22px, 2.2vw, 32px); line-height: 1.18; letter-spacing: -0.025em; font-weight: 400; max-width: 26ch; }
+.st__qa div:last-child p { color: #145CD1; }
+.st__sec { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap); padding: 56px 0; border-bottom: 1px solid rgba(0,0,0,.12); }
+.st__sec h2 { font-size: clamp(22px, 1.9vw, 28px); font-weight: 400; letter-spacing: -0.025em; line-height: 1.1; }
+.st__sec h2 span { display: block; font-size: 13px; color: var(--mute); letter-spacing: 0.06em; margin-bottom: 10px; }
+.st__body { grid-column: 2 / span 2; min-width: 0; }
+.st__list { list-style: none; }
+.st__list li { padding: 12px 0 12px 22px; border-top: 1px solid rgba(0,0,0,.08); position: relative; max-width: 70ch; }
+.st__list li::before { content: ''; position: absolute; left: 0; top: 22px; width: 8px; height: 1px; background: currentColor; }
+.st__list--sm li { font-size: 15px; color: var(--mute); padding-top: 9px; padding-bottom: 9px; }
+.st__list--sm li::before { top: 18px; }
+.st__lead { font-size: clamp(20px, 1.7vw, 24px); line-height: 1.25; margin-bottom: 18px; max-width: 40ch; }
+.st__big { font-size: clamp(28px, 3vw, 46px); line-height: 1.08; letter-spacing: -0.03em; font-weight: 500; max-width: 22ch; }
+.st__sub { color: var(--mute); margin-top: 16px; max-width: 62ch; }
+.st__stmt { padding: 18px 0; border-top: 1px solid rgba(0,0,0,.08); }
+.st__stmt:first-child { border-top: 0; padding-top: 0; }
+.st__stmt p { font-size: clamp(20px, 1.7vw, 25px); line-height: 1.22; letter-spacing: -0.02em; max-width: 40ch; }
+.st__stmt em { display: block; font-style: normal; color: var(--mute); margin-top: 8px; max-width: 60ch; }
+.st__chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px; }
+.st__chips span { display: inline-block; border: 1px solid rgba(0,0,0,.18); border-radius: 999px; padding: 9px 18px; font-size: 16px; text-transform: none; letter-spacing: -0.01em; color: var(--ink); margin: 0; }
+.st__big + .st__chips, .st__sub + .st__chips { margin-top: 22px; }
+.st__cmp { border-top: 1px solid rgba(0,0,0,.08); }
+.st__cmprow { display: grid; grid-template-columns: 200px 1fr; gap: var(--gap); padding: 14px 0; border-bottom: 1px solid rgba(0,0,0,.08); }
+.st__cmprow b { font-weight: 500; }
+.st__cmprow span { color: var(--mute); }
+.st__cmprow.is-us { background: var(--ink, #0E0E0D); color: #fff; padding: 18px; border-radius: 12px; margin-top: 10px; border: 0; }
+.st__cmprow.is-us span { color: rgba(255,255,255,.75); }
+.st__cards { display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); gap: var(--gap); margin-bottom: 8px; }
+.st__card { padding-top: 16px; border-top: 1px solid rgba(0,0,0,.18); }
+.st__card h4 { font-size: 19px; font-weight: 500; letter-spacing: -0.015em; margin-bottom: 8px; }
+.st__card p { color: var(--mute); font-size: 16px; }
+.st__card .st__list { margin-top: 12px; }
+.st__cards + .st__kick { margin-top: 32px; }
+.st__opts { display: flex; flex-wrap: wrap; gap: 12px; }
+.st__opts span { font-size: clamp(26px, 2.6vw, 40px); letter-spacing: 0.02em; padding: 18px 26px; border-radius: 14px; border: 1px solid rgba(0,0,0,.14); color: var(--mute); position: relative; }
+.st__opts span.is-on { background: var(--ink, #0E0E0D); color: #fff; border-color: transparent; }
+.st__opts i { display: block; font-style: normal; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #145CD1; margin-top: 6px; }
+.st__dec { display: grid; grid-template-columns: 200px 1fr; gap: var(--gap); padding: 22px 0; border-top: 1px solid rgba(0,0,0,.08); }
+.st__dec:first-child { border-top: 0; padding-top: 0; }
+.st__dec b { font-size: clamp(28px, 2.6vw, 40px); font-weight: 400; letter-spacing: 0.04em; }
+.st__dec p { margin-bottom: 10px; max-width: 60ch; color: var(--mute); }
+.st__dec strong { color: var(--ink, #0E0E0D); font-weight: 500; }
+.st__sl { max-width: 680px; }
+.st__slrow { display: grid; grid-template-columns: 170px 1fr 170px; gap: 18px; align-items: center; padding: 11px 0; font-size: 15px; }
+.st__slrow span:last-child { text-align: right; }
+.st__bar { position: relative; height: 1px; background: rgba(0,0,0,.25); }
+.st__bar i { position: absolute; top: 50%; width: 11px; height: 11px; background: var(--ink, #0E0E0D); transform: translate(-50%, -50%) rotate(45deg); }
+.st__note { margin-top: 28px; padding: 18px 20px; border-left: 2px solid #145CD1; background: var(--wash); border-radius: 0 12px 12px 0; max-width: 64ch; }
+.st__note span { color: #145CD1; margin-bottom: 6px; }
+.st__out figure { margin: 0; border-radius: var(--radius); overflow: hidden; }
+.st__out figure img { width: 100%; display: block; }
+.st__link { display: inline-block; margin-top: 18px; color: inherit; }
+.st__next { display: block; padding: 64px 0 0; color: inherit; text-decoration: none; font-size: clamp(36px, 4.6vw, 68px); letter-spacing: -0.035em; line-height: 1; }
+.st__next span { display: block; font-size: 15px; color: var(--mute); letter-spacing: 0; margin-bottom: 12px; }
+.mind__list .mind__item a { grid-template-columns: 1fr 2fr 2fr auto; }
+.mind__q { color: var(--mute); }
+.mind__a { max-width: 44ch; }
+@media (max-width: 760px) {
+  .st { padding-top: 120px; }
+  .st__qa, .st__sec, .st__cards { grid-template-columns: 1fr; }
+  .st__body { grid-column: 1; }
+  .st__cmprow, .st__dec { grid-template-columns: 1fr; gap: 6px; }
+  .st__slrow { grid-template-columns: 1fr 1fr; }
+  .st__slrow .st__bar { grid-column: 1 / -1; order: 3; }
+  .mind__list .mind__item a { grid-template-columns: 1fr; }
+}
+.work { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: var(--gap); padding-bottom: 120px; }
+.card { grid-column: span 2; position: relative; display: block; border-radius: var(--radius); overflow: hidden; background: var(--wash); aspect-ratio: 16 / 9; }
+.card--big { grid-column: span 4; grid-row: span 2; aspect-ratio: auto; }
+.pos-a { grid-column: 1 / span 4; grid-row: 1 / span 2; }
+.pos-b { grid-column: 3 / span 4; grid-row: 3 / span 2; }
+.card--wide { grid-column: 1 / -1; aspect-ratio: 21 / 9; }
+.card--half { grid-column: span 3; aspect-ratio: 16 / 9; }
+.card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .6s ease, transform 1.2s cubic-bezier(.19,1,.22,1); }
+.card img.is-on { opacity: 1; }
+.card:hover img.is-on { transform: scale(1.02); }
+.card__cap { display: none; }
+
+/* Custom cursor label */
+.cursor { position: fixed; left: 0; top: 0; z-index: 60; pointer-events: none; padding: 8px 14px; border-radius: 999px; background: var(--hover); color: #fff; font-size: 16px; font-weight: 400; white-space: nowrap; opacity: 0; transform: translate(-50%, -50%) scale(.9); transition: opacity .2s ease, transform .2s ease; }
+.cursor.is-on { opacity: 1; transform: translate(14px, 14px) scale(1); }
+
+/* Case page */
+.hero { margin: 0 calc(var(--gap) * -1); aspect-ratio: 16 / 9; max-height: 92vh; width: calc(100% + var(--gap) * 2); background: var(--wash); overflow: hidden; }
+.hero img, .hero video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.chead { padding: 72px 0 40px; row-gap: 48px; }
+.chead__num { grid-column: 1; color: var(--mute); }
+.chead h1 { grid-column: 1; font-size: clamp(40px, 4.6vw, 68px); line-height: 1; letter-spacing: -0.035em; }
+.chead__line { grid-column: 2 / span 2; font-size: clamp(22px, 2vw, 30px); line-height: 1.25; align-self: end; max-width: 30ch; }
+.story { padding-bottom: 40px; row-gap: 40px; }
+.story h2, .meta dt { font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--mute); font-weight: 400; margin-bottom: 12px; }
+.story p { max-width: 42ch; }
+.story .is-idea p { color: var(--ink); font-weight: 400; }
+.story .is-idea h2 { color: var(--signal-ink); }
+.meta { grid-column: 3; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding: 24px 0 96px; }
+.meta dd { font-size: 18px; }
+.meta--wide { grid-column: 1 / -1; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid #DCDAD5; }
+/* Brand film */
+.film { padding-bottom: var(--gap); }
+.film__head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 14px; }
+.film__head h2 { font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--mute); font-weight: 400; }
+.film__head span { font-size: 15px; color: var(--mute); }
+.film__frame { position: relative; border-radius: var(--radius); overflow: hidden; background: var(--ink); aspect-ratio: 16 / 9; }
+.film__frame video, .film__frame > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.film__frame > img { opacity: .3; filter: grayscale(.3) blur(3px); transform: scale(1.03); }
+.film__play { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: flex; align-items: center; gap: 14px; padding: 16px 26px 16px 18px; border: 0; border-radius: 999px; background: var(--signal); color: #fff; font: inherit; font-size: 18px; font-weight: 400; cursor: pointer; transition: transform .3s cubic-bezier(.19,1,.22,1); }
+.film__play:hover { transform: translate(-50%, -50%) scale(1.04); }
+.film__play svg { width: 22px; height: 22px; }
+.film__soon { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); text-align: center; color: #fff; }
+.film__soon b { display: block; font-weight: 300; font-size: clamp(28px, 3vw, 44px); letter-spacing: -0.03em; }
+.film__soon span { font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; opacity: .8; }
+.film__frame.is-playing .film__play { display: none; }
+.film__frame--tall { aspect-ratio: 9 / 16; }
+.row--video .row__text { align-self: center; }
+.row--video.is-right .film__frame { order: 1; }
+.row--video.is-right .row__text { order: 2; grid-column: span 2; padding-left: 4vw; }
+@media (max-width: 760px) { .row--video.is-right .row__text { order: 0; grid-column: 1; padding-left: 0; } }
+.fig--tall { aspect-ratio: 3 / 4; }
+.row--trio .fig, .row--tall .fig { aspect-ratio: 3 / 4; }
+@media (max-width: 760px) { .row--video .film__frame--tall { max-width: 360px; } }
+.rows { display: flex; flex-direction: column; gap: var(--gap); padding-bottom: 120px; }
+.row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap); align-items: start; }
+.row__text { padding: 4px 0; }
+.row__text h3 { font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--mute); font-weight: 400; margin-bottom: 12px; }
+.row__text p { max-width: 40ch; }
+.fig { border-radius: var(--radius); overflow: hidden; background: var(--wash); aspect-ratio: 16 / 9; }
+.fig img { width: 100%; height: 100%; object-fit: cover; }
+.fig--contain img { object-fit: contain; }
+.row--text .fig { grid-column: span 2; }
+.row--text.is-right .row__text { order: 2; }
+.row--text.is-right .fig { order: 1; }
+.row--full .fig { grid-column: 1 / -1; }
+.row--cols { display: block; padding: 48px 0 56px; border-top: 1px solid var(--line, rgba(0,0,0,.12)); }
+.cols__title { font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--mute); font-weight: 400; margin-bottom: 28px; }
+.cols { display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); gap: var(--gap); }
+.cols__item h4 { font-size: clamp(20px, 1.7vw, 26px); font-weight: 400; letter-spacing: -0.02em; margin-bottom: 12px; }
+.cols__item p { color: var(--mute); max-width: 36ch; }
+@media (max-width: 760px) { .cols { grid-template-columns: 1fr; gap: 28px; } }
+.row--wfilm .row__text, .row--wfilm .film__frame { grid-column: 1 / -1; }
+.row--full.is-natural .fig { aspect-ratio: auto; }
+.row--full.is-natural .fig img { height: auto; display: block; }
+.row--pair { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.cap { grid-column: 1 / -1; color: var(--mute); font-size: 15px; margin-top: -8px; }
+.outro { color: var(--mute); font-size: 15px; max-width: 60ch; padding-bottom: 64px; }
+.next { position: relative; display: block; margin: 0 calc(var(--gap) * -1); aspect-ratio: 16 / 7; overflow: hidden; background: var(--ink); }
+.next img { width: 100%; height: 100%; object-fit: cover; opacity: .85; transition: opacity .4s ease, transform 1.2s cubic-bezier(.19,1,.22,1); }
+.next:hover img { opacity: 1; transform: scale(1.02); }
+.next__label { position: absolute; left: var(--gap); bottom: var(--gap); color: #fff; font-size: clamp(28px, 3vw, 44px); letter-spacing: -0.03em; text-shadow: 0 1px 24px rgba(0,0,0,.35); }
+.next__label span { display: block; font-size: 16px; letter-spacing: 0.04em; text-transform: uppercase; opacity: .8; }
+
+/* About */
+.about { padding: 200px 0 120px; row-gap: 72px; }
+.about__photo { grid-column: 1; margin: 0; border-radius: var(--radius); overflow: hidden; aspect-ratio: 3 / 4; background: var(--wash); }
+.about__photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.about__lead { grid-column: 2 / span 2; align-self: end; font-size: clamp(22px, 2.1vw, 32px); line-height: 1.22; letter-spacing: -0.025em; }
+.about__col h2 { font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--mute); font-weight: 400; margin-bottom: 16px; }
+.about__col li { padding: 10px 0; border-top: 1px solid #DCDAD5; display: flex; justify-content: space-between; gap: 16px; }
+.about__col li span { color: var(--mute); white-space: nowrap; }
+
+/* Footer */
+.foot { background: var(--wash); padding: 96px var(--gap) 32px; }
+.foot__big { font-size: clamp(34px, 4.4vw, 64px); line-height: 1.02; letter-spacing: -0.035em; max-width: 16ch; margin-bottom: 96px; }
+.foot__cols { row-gap: 32px; }
+.foot__cols div { display: flex; flex-direction: column; gap: 6px; }
+.foot__cols .lab { color: var(--mute); }
+.foot__cols a:hover { color: var(--hover); }
+a, button { transition: color .2s ease, background-color .2s ease; }
+.hdr:has(nav a:hover, nav button:hover, .hdr__mark:hover) { mix-blend-mode: normal; color: var(--ink); }
+.hdr nav a:hover, .hdr nav button:hover, .hdr a:hover { color: var(--hover); }
+.mind__item a:hover, .mind__item a:hover .mind__name, .mind__item a:hover .mind__go, .st__next:hover, .st__link:hover, .st__num a:hover, .about a:hover, .svc a:hover { color: var(--hover); }
+.card:hover .card__cap, .next:hover h2, .next:hover span { color: var(--hover); }
+.film__play:hover { background: var(--ink); color: #fff; }
+.foot__base { display: flex; justify-content: space-between; color: var(--mute); margin-top: 96px; font-size: 15px; }
+
+@media (max-width: 760px) {
+  :root { --gap: 16px; --radius: 14px; }
+  .hdr { font-size: 18px; gap: 16px; }
+  .hdr__name, .hdr__page { display: none; }
+  .hdr nav { gap: 6px 14px; font-size: 15px; flex-wrap: wrap; justify-content: flex-end; }
+  .grid3, .row, .row--pair, .work, .meta, .meta--wide { grid-template-columns: 1fr; }
+  .intro { padding: 120px 0 40px; }
+  .intro h1, .intro p, .chead h1, .chead__num, .chead__line, .meta, .about__lead, .about__photo { grid-column: 1; }
+  .work { gap: 40px; }
+  .card, .card--big, .card--wide, .card--half, .pos-a, .pos-b { grid-column: auto; grid-row: auto; aspect-ratio: 16 / 9; }
+  .card__cap { display: block; position: absolute; left: 0; right: 0; top: calc(100% + 10px); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .card-wrap { margin-bottom: 30px; }
+  .card__cap span { color: var(--mute); margin-left: 8px; }
+  .card { overflow: visible; }
+  .card .media { position: absolute; inset: 0; border-radius: var(--radius); overflow: hidden; }
+  .row--text .fig, .row--full .fig { grid-column: 1; }
+  .row--text.is-right .row__text { order: 0; }
+  .meta { grid-template-columns: 1fr 1fr; }
+  .about { padding: 120px 0 80px; }
+  .next { aspect-ratio: 4 / 3; }
+  .foot__base { flex-direction: column; gap: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+</style>
+</head>
+<body>
+<header class="hdr" id="hdr">
+  <a class="hdr__mark" href="#work" aria-label="Mostafa Ibrahime, home">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" stroke-width="1.5"></circle><circle cx="12" cy="12" r="4" fill="currentColor"></circle></svg>
+    <span class="hdr__name">Mostafa Ibrahime</span>
+  </a>
+  <span class="hdr__page" id="hdrPage">Work</span>
+  <nav aria-label="Main">
+    <a href="#work" data-nav="work">Work</a>
+    <a href="#mind" data-nav="mind">Mind Behind</a>
+    <a href="#services" data-nav="services">Services</a>
+    <a href="#about" data-nav="about">About</a>
+    <button type="button" id="toContact">Contact</button>
+  </nav>
+</header>
+
+<main id="main"></main>
+
+<footer class="foot" id="contact">
+  <p class="foot__big">Every brand already has its idea. Let’s find yours.</p>
+  <div class="grid3 foot__cols">
+    <div>
+      <span class="lab">Email</span>
+      <a href="mailto:mostafaibrahime110@gmail.com">mostafaibrahime110@gmail.com</a>
+      <span class="lab" style="margin-top:14px;">Phone</span>
+      <a href="https://wa.me/201015171066" target="_blank" rel="noopener">+20 101 517 1066</a>
+    </div>
+    <div>
+      <span class="lab">Elsewhere</span>
+      <a href="https://www.linkedin.com/in/mostafa-ibrahime" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.instagram.com/mostafa.ibrahime110" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.behance.net/mostafaibrahim30" target="_blank" rel="noopener">Behance</a>
+    </div>
+    <div>
+      <span class="lab">Working globally</span>
+      <span>Brands live across the GCC, Egypt, Europe, Australia and the USA. Open to brand strategy and rebranding projects anywhere in the world.</span>
+    </div>
+  </div>
+  <div class="foot__base"><span>© 2026 Mostafa Ibrahime</span></div>
+</footer>
+
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+
+<script>
+const CASES = [
+  {
+    id: 'coastra', name: 'COASTRA', short: 'derived from the coastline',
+    line: 'A premium Australian lifestyle brand — apparel, fragrance and objects — built to welcome everyone the land embraces.',
+    market: 'Australia', sector: 'Lifestyle luxury', derived: 'The coastline, the compass, the horizon', role: 'Strategy, naming, concept, identity',
+    thumbs: ['cx_51', 'cx_48', 'cx_75'], hero: 'cx_48', heroVideo: 'films/coastra_hero.mp4', film: 'films/coastra.mp4', filmPoster: 'cx_52',
+    challenge: 'The client arrived with a name: “5th Star”. It tied a brand meant to unite every Australian to the current flag, its colonial-era symbolism and an open public debate. It is also the faintest star in the constellation.',
+    insight: 'A competitive analysis of four players showed one vacant space: inclusive, knowledge-driven luxury, free of political polarisation. The land is the one thing every Australian shares.',
+    idea: 'The land grants its light, vastness and belonging to everyone who steps upon it. The name became COASTRA; the platform, Boundless Horizon.',
+    rows: [
+      { t: 'text', h: 'The name', p: 'I advised against “5th Star”: divisive, unstable as a symbol, and hard to use — a number plus a word breaks down on labels, apparel and packaging. The client agreed. COASTRA was chosen over Biora and Nullara.', img: 'cx_67', alt: 'The COASTRA wordmark embossed on brown leather' },
+      { t: 'full', img: 'cx_49', alt: 'COASTRA campaign: a man in a printed silk shirt looking out to sea, with the gold bird and the line Luxury is an invitation' },
+      { t: 'text', right: true, h: 'Positioning', p: '“The first Australian brand to shape an inclusive luxury culture that welcomes everyone.” Built for modern coastal natives, first- and second-generation immigrants and urban Aboriginal youth. Values: A Land for All, Sovereign Elegance, Rooted Authenticity.', img: 'cx_51', alt: 'COASTRA campaign on the Sydney harbour shore with illustrated COASTRA stamps' },
+      { t: 'pair', imgs: ['co_019c', 'co_024c'], alts: ['Historic maritime charts of the Australian coastline', 'Research collage of the Bunda Cliffs'], cap: 'Derived from historic maritime charts and the Bunda Cliffs — for centuries, the navigator’s sign of arrival.' },
+      { t: 'text', h: 'Geography into geometry', p: 'Every angle in the mark is a bearing, not an arbitrary decision. Its axes follow the compass, its edge follows the cliff’s profile and its base is the uninterrupted horizon.', img: 'co_033', alt: 'Cliff photograph with the mark’s edge traced along its profile', contain: true },
+      { t: 'pair', imgs: ['co_034', 'co_035'], alts: ['An antique compass beside a measured bearing angle', 'The curve of the horizon seen from space'], contain: true },
+      { t: 'full', img: 'co_025', alt: 'Hand sketches of the mark on a navigational grid', cap: 'Sketching the mark on a navigational grid.', contain: true },
+      { t: 'text', right: true, h: 'The mark', p: 'Cliff, bearing and horizon held in one circle, like a navigator’s instrument. Gilded and framed over a painted Australian harbour, it reads as heritage, not trend.', img: 'cx_75', alt: 'The COASTRA emblem in gold inside a gilded frame over a painted Sydney harbour scene' },
+      { t: 'pair', imgs: ['co_054', 'cx_68'], alts: ['The COASTRA emblem embossed on green fabric', 'A blue COASTRA tote bag with the emblem and Boundless Horizon script'], cap: 'One mark across fabric, leather and everyday objects.' },
+      { t: 'full', img: 'cx_61', alt: 'COASTRA poster on a street advertising column' },
+      { t: 'pair', imgs: ['cx_57', 'cx_59'], alts: ['Two COASTRA posters on street stands', 'A tall COASTRA sign with illustrated stamps in a city plaza'], cap: 'Boundless Horizon in the city.' },
+      { t: 'full', img: 'cx_54', alt: 'COASTRA campaign poster between two escalators in a station' },
+      { t: 'pair', imgs: ['cx_45', 'cx_62'], alts: ['COASTRA business cards and a campaign print in a glassine envelope over a coastline', 'A COASTRA card with the emblem on stone'] },
+      { t: 'full', img: 'cx_53', alt: 'COASTRA magazine spread: Beyond the Horizon with stamps, and the logo on blue' },
+      { t: 'pair', imgs: ['cx_56', 'cx_60'], alts: ['Two COASTRA magazine covers on pink steps', 'COASTRA magazine open on Boundless Horizon and Rhythmic Permanence'], cap: 'Print and editorial: the land told as a collectible story.' },
+      { t: 'pair', imgs: ['cx_55', 'cx_71'], alts: ['A blue COASTRA book with a gold vine and the framed emblem', 'The COASTRA app on a phone over printed catalogues'] },
+      { t: 'full', img: 'cx_58', alt: 'A COASTRA chronograph watch with a brown leather strap in warm light' }
+    ]
+  },
+  {
+    id: 'haseen', name: 'Haseen', short: 'derived from a fortress',
+    line: 'The International Fatwa Reference: a global platform under Egypt’s Dar Al-Ifta that brings sharia knowledge and fatwa expertise together, online and with AI.',
+    market: 'Egypt → global', sector: 'Religious knowledge platform', derived: 'A fortress', role: 'Naming and brand strategy', credit: 'Visual identity by Shoair Art, built on this strategy.',
+    thumbs: ['hs_51', 'hs_32', 'hs_43'], hero: 'hs_51', film: 'films/haseen.mp4', filmPoster: 'hsv_poster',
+    challenge: 'Religious questions now meet a crowded field of doubt: social feeds, unsourced answers and AI that guesses. A question about faith deserves one clear answer, standing on a reference people already trust.',
+    insight: 'Every audience wants protection, each in its own way. The asker wants privacy without judgement. The researcher wants sources without simplification. The mufti wants precedent without losing the decision. Institutions want a shared reference without being dictated to.',
+    idea: 'Haseen: fortified. A platform that protects the question, the answer and the heritage behind it, moving people from crowded doubt to knowledge with a chain of reference.',
+    rows: [
+      { t: 'text', h: 'The name', p: 'Haseen comes from the Arabic root ḥ-ṣ-n: a fortress, something protected and hard to breach. It names exactly what the platform does. It guards the asker’s privacy, protects every answer from error and machine guesswork, and keeps a century of Dar Al-Ifta scholarship intact for those who come next.', img: 'hs_4', alt: 'The Haseen calligraphic wordmark in large scale on green' },
+      { t: 'text', right: true, h: 'The line', p: '“Turath man sabaqu, wa hisn man lahiqu”: the heritage of those who came before, and a fortress for those who come after. The name, explained in one sentence: the past is the source, the platform is the protection.', img: 'hs_43', alt: 'Haseen flags and the line on a green panel' },
+      { t: 'cols', h: 'Who it protects', items: [
+        { h: 'The asker', p: 'Carries a private question, often for months. Wants full privacy and an answer without blame. Leaves feeling heard, unjudged and lighter.' },
+        { h: 'The researcher', p: 'Builds a study, a sermon or a lesson. Wants every opinion, its evidence, where scholars differ and a full chain of citation. Gets a tool that works an issue the way scholars do.' },
+        { h: 'The mufti', p: 'Issues and reviews fatwas. Wants fast access to precedent and sources, with the final decision still in his hands. Gains back time for the case itself.' },
+        { h: 'Fatwa authorities worldwide', p: 'Want integrated data and a disciplined reference across borders and languages. Become part of one fatwa system, built on a shared heritage rather than lone opinion.' }
+      ] },
+      { t: 'cols', h: 'What it stands for', items: [
+        { h: 'A clear answer', p: 'One pure answer, free from machine hallucination or a list of maybes.' },
+        { h: 'Deep roots', p: 'Grounded in an institutional heritage that no tech competitor can own.' },
+        { h: 'A safe space', p: 'Complete privacy that respects the asker and protects them from judgement.' }
+      ] },
+      { t: 'text', h: 'Strategy into identity', p: 'Every element of the visual identity traces back to the name. The arch stands for protection and reference, the window for the door to knowledge, the radiant mark for insight, and the spark for the moment an answer becomes clear.', img: 'hs_11', alt: 'The ten Haseen graphic elements: radiant mark, stars, arch, window, crescent, flora, diamond rhythm and spark' },
+      { t: 'pair', imgs: ['hs_5', 'hs_7'], alts: ['The Haseen lockup: the International Fatwa Reference', 'The Haseen Arabic and Latin lockup'] },
+      { t: 'pair', imgs: ['hs_14', 'hs_15'], alts: ['Haseen elements as coloured tiles: arch, light, growth, rhythm, structure, radiance', 'A Haseen pattern built from the elements'] },
+      { t: 'full', img: 'hs_16', alt: 'The Haseen elements rendered in relief' },
+      { t: 'pair', imgs: ['hs_18', 'hs_19'], alts: ['Haseen artworks with scholars in a library', 'Haseen artworks framed in arches'] },
+      { t: 'full', img: 'hs_20', alt: 'A Haseen campaign composition with books, arches and the radiant mark' },
+      { t: 'pair', imgs: ['hs_22', 'hs_23'], alts: ['Haseen banners in a library', 'A Haseen artwork beside Al-Azhar mosque'] },
+      { t: 'text', right: true, h: 'The fortress, online', p: 'An AI that answers only from a century of sharia scholarship, never from guesswork. And a personal fatwa service where a mufti from Dar Al-Ifta answers and seals each question, in private.', img: 'hs_25', alt: 'The Haseen website: AI that answers from a century of sharia knowledge' },
+      { t: 'pair', imgs: ['hs_26', 'hs_30'], alts: ['Haseen website sections', 'A Haseen fatwa document and the request form'] },
+      { t: 'full', img: 'hs_32', alt: 'Haseen on a stage screen' },
+      { t: 'full', natural: true, img: 'hn_ooh', alt: 'Three Haseen posters in a station: the star, the diamond rhythm and the arch' },
+      { t: 'full', natural: true, img: 'hn_ipad1', alt: 'The Haseen website on a tablet stand: AI that answers from a century of sharia knowledge' },
+      { t: 'full', natural: true, img: 'hn_ipad2', alt: 'The Haseen website on a tablet in hand: two ways to a trusted answer, for the reader and the researcher' },
+      { t: 'full', natural: true, img: 'hn_app', alt: 'The Haseen app icon in a phone dock' },
+      { t: 'full', natural: true, img: 'hn_box', alt: 'A green Haseen binder box with the radiant mark' },
+      { t: 'full', natural: true, img: 'hn_brochure', alt: 'A Haseen brochure open on the radiant mark, the arch and the diamond rhythm' },
+      { t: 'full', img: 'hs_41', alt: 'Haseen at an international fatwa conference' },
+      { t: 'pair', imgs: ['hs_42', 'hs_46'], alts: ['The Haseen backdrop at the conference', 'A panel session with the Haseen wordmark behind the speakers'] },
+      { t: 'full', img: 'hs_44', alt: 'Haseen presentation screen at the podium' }
+    ]
+  },
+  {
+    id: 'al-qusoor-al-hamra', name: 'Al Qusoor Al Hamra', short: 'derived from its own name',
+    line: 'A Riyadh real-estate developer selling luxury homes to investors and families.',
+    market: 'Riyadh, Saudi Arabia', sector: 'Real estate development', derived: 'Its own name', role: 'Strategy, concept, identity',
+    thumbs: ['qx_21', 'qx_3', 'qx_11'], hero: 'qx_21', film: 'films/qusoor.mp4', filmPoster: 'qx_41',
+    challenge: 'Investors in Riyadh’s luxury market buy safety, status and growth. The brand had to promise all three with a story of its own.',
+    insight: 'Al Qusoor Al Hamra means “The Red Palaces”. So does Alhambra. The name already pointed to one of the greatest landmarks of Islamic architecture in Al-Andalus.',
+    idea: 'Read the name literally and let the palace build the brand: every architectural element became a promise to the investor.',
+    rows: [
+      { t: 'text', h: 'Research', p: 'Studying the Alhambra’s columns, arcades, fortifications and towers — and what each could mean to someone placing capital.', img: 'qu_006', alt: 'Research board of Alhambra photographs and architectural sketches', contain: true },
+      { t: 'pair', imgs: ['qu_007', 'qu_008'], alts: ['Alhambra elements reduced to simple shapes', 'Ruby, crown and fortress references'], contain: true },
+      { t: 'text', right: true, h: 'Architecture into promises', p: 'Solid columns: your investment stands on many pillars, not one bet. The soaring arch: a gateway to a studied opportunity. Defensive angles: assets guarded like a fortress. The tiered crown: a rising growth chart. The red: land and lasting value that matures like a ruby.', img: 'qx_41', alt: 'The Qusoor Hamra mark and bilingual name in copper on a terracotta wall' },
+      { t: 'pair', imgs: ['qu_009', 'qu_010'], alts: ['Abstracted solid columns', 'Abstracted soaring arch'], contain: true },
+      { t: 'pair', imgs: ['qu_011', 'qu_012'], alts: ['Abstracted defensive angles', 'Abstracted tiered crown'], contain: true },
+      { t: 'video', h: 'The idea in motion', p: 'Arches, columns and the ruby come together into the mark. The whole derivation in one vertical film, made for social.', video: 'films/qusoor_vertical.mp4', poster: 'qv_poster' },
+      { t: 'text', h: 'A royal seal', p: 'Columns, arch, angles and crown read as one skyline. Struck in gold on palace red, the mark works as a seal of status, not just a logo.', img: 'qx_11', alt: 'A red card with the gold Qusoor Hamra mark and the brand line in relief' },
+      { t: 'full', img: 'qx_3', alt: 'A red cloth-bound Qusoor Hamra book: Spaces that tell your story' },
+      { t: 'pair', imgs: ['qx_9', 'qx_12'], alts: ['A red Qusoor Hamra envelope with the brand line', 'Qusoor Hamra business cards on textured white stock'] },
+      { t: 'full', img: 'qx_51', alt: 'Qusoor Hamra red book cover and an open spread: Your favorite sport just steps away' },
+      { t: 'pair', imgs: ['qx_7', 'qx_8'], alts: ['A blue Qusoor Hamra flyer: Spaces that tell your story', 'A green Qusoor Hamra flyer: Your favorite sport just steps away'] },
+      { t: 'full', img: 'qx_4', alt: 'A man reading the Qusoor Hamra magazine with the gold mark over green marble' },
+      { t: 'text', right: true, h: 'One line, every channel', p: '“Spaces That Tell Your Story” carries the palace into the street — from the sales poster with the unit price to rooftop billboards and city hoardings.', img: 'qx_34', alt: 'Qusoor Hamra street poster in Arabic with the unit price' },
+      { t: 'full', img: 'qx_14', alt: 'A Qusoor Hamra rooftop billboard on two faces, white and red' },
+      { t: 'pair', imgs: ['qx_16', 'qx_17'], alts: ['A street hoarding with an aerial view of the community', 'A hoarding: Your favorite sport just steps away'] },
+      { t: 'full', img: 'qx_40', alt: 'A corridor wall: Spaces that tell your story, with the unit price' },
+      { t: 'pair', imgs: ['qx_29', 'qx_6'], alts: ['The Qusoor Hamra Instagram profile on a phone', 'A screen showing: A life that feels like a private kingdom'], cap: 'Digital: the same palace, one screen at a time.' },
+      { t: 'full', img: 'qx_60', alt: 'The Qusoor Hamra website and social posts on laptop, tablet and phones' }
+    ]
+  },
+  {
+    id: 'istidama', name: 'Istidama', short: 'derived from precious stones',
+    line: 'A Kuwaiti real-estate marketing platform for residential units and land plots.',
+    market: 'Kuwait', sector: 'Real-estate marketing', derived: 'Precious stones', role: 'Strategy, concept, identity',
+    thumbs: ['ix_78', 'ix_77', 'ix_87'], hero: 'ix_83', film: 'films/istidama.mp4', filmPoster: 'ix_87',
+    challenge: 'Real-estate investors look for one thing above all: value that holds.',
+    insight: 'Gemstones are the oldest proof of lasting value. Emerald, diamond, cobalt and basalt keep their worth and grow with time.',
+    idea: 'The facets of a gem became the four things Istidama sells: space, urban planning, dimension and layers.',
+    rows: [
+      { t: 'text', h: 'The gem', p: 'A faceted mark built on a construction grid, so every edge carries the same precision the brand promises investors.', img: 'is_006', alt: 'Construction drawing of the faceted Istidama gem', contain: true },
+      { t: 'pair', imgs: ['is_013', 'ix_87'], alts: ['A cut emerald', 'The Istidama gem carved into stone'], cap: 'From a cut emerald to a mark carved in stone: value that holds its shape.' },
+      { t: 'text', right: true, h: 'Facets into a language', p: 'The gem’s irregular facets became the brand’s frame. Every image is cut into a stone shape, and every message is a promise of lasting value: Sustainable Returns, Enduring Value, Prime Location, Luxury Living.', img: 'ix_80', alt: 'Istidama street poster: Sustainable Returns, with a garden courtyard cut into a stone shape' },
+      { t: 'full', img: 'ix_77', alt: 'Istidama stationery: folders, cards, brochure, keyring and tape' },
+      { t: 'pair', imgs: ['ix_78', 'ix_84'], alts: ['Istidama bilingual sign on a building', 'Istidama wordmark embossed in gold on blue-grey leather'] },
+      { t: 'pair', imgs: ['ix_74', 'ix_75'], alts: ['Istidama folder: Sustainable Returns', 'Istidama book: We know what you need'] },
+      { t: 'full', img: 'ix_76', alt: 'Istidama brochure spread: Invest with Istidama and Luxury Living' },
+      { t: 'full', img: 'ix_79', alt: 'Istidama street wall campaign: Luxury Living, 19033 and Sustainable Returns in Arabic' },
+      { t: 'pair', imgs: ['ix_81', 'ix_82'], alts: ['Istidama billboard in Arabic: Discover our projects today', 'Istidama billboard: 20% down payment'], cap: 'One promise across every channel.' },
+      { t: 'full', img: 'ix_85', alt: 'Four Istidama social posts on phone screens' },
+      { t: 'full', img: 'ix_86', alt: 'Four more Istidama social posts: Luxury Living, Invest with Istidama, Prime Location, trusted partnership' }
+    ]
+  },
+  {
+    id: 'tegrensee', name: 'Tegrensee', short: 'derived from its own swan',
+    line: 'A Saudi café group expanding into new branches, packaging and products.',
+    market: 'Saudi Arabia', sector: 'Specialty cafés', derived: 'Its own swan', role: 'Strategy, concept, icon design',
+    thumbs: ['tg_cup', 'tg_11', 'tg_08'], hero: 'tg_cup', film: '', filmPoster: 'tgk_09',
+    challenge: 'The café group was expanding. Its old logo was part of the brand’s history and loved by its regulars, but it could not flex across new uses or reflect where the business was heading.',
+    insight: 'A full change would risk the loyal audience who love the place. The story was the asset; the drawing was the problem.',
+    idea: 'Modernise everything while keeping the original story: the swan stays, redrawn to work everywhere the brand grows.',
+    rows: [
+      { t: 'tall', h: 'Before and after', p: 'The hard strategic call: not a full change, but a complete modernisation that keeps the original story. The swan and the name stayed; everything around them was rebuilt into one confident mark.', imgs: ['tg_00', 'tg_04'], alts: ['The old Tegrensee logo above the new one', 'The new Tegrensee lockup on a printed bag'] },
+      { t: 'tall', h: 'The research', p: '200+ swan references and a study of species, anatomy and movement, to find a drawing style that could work flexibly in the real world.', imgs: ['tgs_refs', 'tgs_sketch'], alts: ['A research board of swan photographs, species charts and drawings', 'Hand sketches of the swan icon and the Arabic wordmark on dotted paper'] },
+      { t: 'tall', h: 'The craft', p: 'Sketch after sketch to find the most beautiful neck and body, flexible enough for print, packaging and interior design. The hardest part: making the icon and the chosen typeface work together in harmony, measured down to the spacing.', imgs: ['tgs_build', 'tgk_16'], alts: ['Construction of the Tegrensee lockup with its spacing measurements', 'The swan icon with the bilingual name on blue'] },
+      { t: 'pair', imgs: ['tgk_21', 'tgk_25'], alts: ['The Arabic wordmark in blue', 'The Latin wordmark on blue'], cap: 'An Arabic and Latin wordmark drawn to sit side by side.' },
+      { t: 'full', img: 'tg_cup', alt: 'A hand holding a blue Tegrensee cup' },
+      { t: 'trio', imgs: ['tg_02', 'tg_07', 'tg_08'], alts: ['A Tegrensee pastry box', 'A blue Tegrensee shopping bag with the swan', 'A blue Tegrensee coffee bag against the sky'], cap: 'Packaging: the swan scaled up until it becomes the pattern.' },
+      { t: 'trio', imgs: ['tg_03', 'tg_05', 'tg_10'], alts: ['A Tegrensee cap', 'A Tegrensee bucket hat', 'Tegrensee sugar sticks beside a coffee'] },
+      { t: 'tall', h: 'In every hand', p: 'From cups and boxes to merch and social, one swan carries the story the regulars already loved, now ready for every new branch.', imgs: ['tg_01', 'tg_11'], alts: ['Tegrensee cups and a box', 'A Tegrensee box held against the sky'] },
+      { t: 'tall', h: 'Street and feed', p: 'The same swan, scaled from a phone screen to a wall.', imgs: ['tg_06', 'tg_09'], alts: ['The Tegrensee Instagram on a phone', 'A Tegrensee poster on a wall'] }
+    ]
+  },
+  {
+    id: 'qomel', name: 'Qomel', short: 'derived from subtraction',
+    line: 'A Saudi pharmaceutical and medical-devices company with SAR 350M+ in capital, moving into its own factory and global export.',
+    market: 'Saudi Arabia → global', sector: 'Pharmaceuticals', derived: 'Subtraction', role: 'Strategy, concept, identity',
+    thumbs: ['qa_07', 'qa_00', 'qa_06'], hero: 'qa_00', film: 'films/qomel.mp4', filmPoster: 'qmv_poster',
+    challenge: 'A company scaling into industry was carrying a logo that worked against it: glow and 3D effects, a meaningless tilt, five-plus greens and gradients, mismatched Arabic and English type, and an icon with no construction rules.',
+    insight: 'A deep read of the global and local pharma market showed the product needed a visual seal of quality — worthy of a Saudi manufacturer exporting to the world, in line with Vision 2030.',
+    idea: 'Remove, don’t add. Strategic debranding strips away the visual noise to reveal the company’s solid core.',
+    rows: [
+      { t: 'text', h: 'The audit', p: 'An eight-point audit of the old mark made the case for change with evidence, not taste.', img: 'qo_041', alt: 'Audit of the old Qomel logo with eight numbered issues', contain: true },
+      { t: 'text', right: true, h: 'Simple is engineered', p: '180+ forms of the letter Q were studied to reach a mark that is unique, memorable and simple — then built on calculated anchor points, a molecular precision inspired by carbon, and golden-ratio proportions.', img: 'qo_012', alt: 'The Q mark with its anchor points shown' },
+      { t: 'pair', imgs: ['qo_011', 'qo_029'], alts: ['Golden ratio circles on a dark green grid', 'The Q rebuilt from green dots'] },
+      { t: 'pair', imgs: ['qo_013', 'qo_028'], alts: ['The new Qomel Q symbol', 'The new Qomel wordmark'] },
+      { t: 'full', img: 'qa_01', alt: 'Qomel stationery in deep green' },
+      { t: 'text', h: 'Why debranding', p: 'Scale: more touchpoints need a mark that can’t be misused. Trust: consistency reads as professionalism. Global: a simple system travels across markets and languages. Digital: clear at any size. Cost: no special inks or fragile details.', img: 'qa_06', alt: 'Green glass wayfinding signs for Research Labs and Reception' },
+      { t: 'full', natural: true, img: 'qn_8', alt: 'A Qomel billboard on a building: Innovative medicines with solid professional expertise' },
+      { t: 'full', natural: true, img: 'qn_9', alt: 'A Qomel poster in a park: Continuous pharmaceutical innovation journey' },
+      { t: 'full', natural: true, img: 'qn_10', alt: 'The Qomel website on a phone' },
+      { t: 'full', natural: true, img: 'qn_11', alt: 'Qomel tape and shipping labels on a parcel' },
+      { t: 'full', natural: true, img: 'qn_12', alt: 'Stacked Qomel shipping boxes in green light' },
+      { t: 'full', natural: true, img: 'qn_2', alt: 'The green Qomel folder with a torn-paper reveal of the wordmark' },
+      { t: 'full', natural: true, img: 'qn_3', alt: 'Qomel books: Supplying Trusted Medicine' },
+      { t: 'full', natural: true, img: 'qn_4', alt: 'The Qomel website on a tablet' },
+      { t: 'full', natural: true, img: 'qn_5', alt: 'Qomel business cards' },
+      { t: 'full', img: 'qa_13', alt: 'Qomel exhibition booth' },
+      { t: 'video', wide: true, h: 'Inside the factory', p: 'The identity at work on the ground: officials touring Qomel’s new manufacturing facility.', video: 'films/qomel_factory.mp4', poster: 'qmf_poster' }
+    ]
+  },
+  {
+    id: 'streak', name: 'Streak', short: 'derived from the client’s own craft',
+    line: 'A Saudi interior fit-out and events company that turns spaces and moments into lasting impressions.',
+    market: 'Saudi Arabia', sector: 'Interior fit-out & events', derived: 'The client’s own craft', role: 'Strategy, concept, identity',
+    thumbs: ['st2_hall', 'st2_booth', 'st2_cube'], hero: 'st2_hall', film: '', filmPoster: 'stv_poster',
+    challenge: 'Streak sells precision, teamwork and impact. Its identity had to prove that craft before a single project was shown.',
+    insight: 'A fit-out company already speaks a design language: the elements and principles of interior design. So the brand should speak it too.',
+    idea: 'One path from idea to impact — the falcon and its flock as a living symbol of seven design principles.',
+    rows: [
+      { t: 'text', h: 'Built on the client’s craft', p: 'Line, balance, rhythm, emphasis, harmony and unity — the principles Streak works with every day became the brand’s foundation.', img: 'st_003', alt: 'Chart of the elements and principles of interior design', contain: true },
+      { t: 'text', right: true, h: 'Seven principles, one flight', p: 'The Path: the falcon’s direct line. Unity: the flock moving as one team. Precision: the falcon’s focus. Rhythm: the flock’s cadence. Symmetry: emphasis that holds the eye. Harmony: every element working together. Impact: the mark left on arrival.', img: 'st_006', alt: 'A falcon in flight and a flock of birds mapped to the principles', contain: true },
+      { t: 'full', img: 'st_008', alt: 'Diagram linking the flock symbol to the principles', contain: true },
+      { t: 'video', right: true, h: 'The idea in motion', p: 'From the first note on paper to the falcon’s flight and the flock’s mark left in the sand: the film tells the whole path, from idea to impact, in under thirty seconds.', video: 'films/streak_vertical.mp4', poster: 'stv_poster' },
+      { t: 'full', natural: true, img: 'st2_booth', alt: 'A Streak exhibition booth with the line “One path from idea to impact” in Arabic', cap: 'One path, from idea to impact: the brand line lives on the stand itself.' },
+      { t: 'full', natural: true, img: 'st2_sand', alt: 'The Streak flock embossed in sand' },
+      { t: 'full', natural: true, img: 'st2_cube', alt: 'A Streak LED cube on stage: Creating Memories, Designing Moments' },
+      { t: 'full', natural: true, img: 'st2_sign', alt: 'A Streak sign on a building wall' },
+      { t: 'video', wide: true, h: 'The mark, constructed', p: 'Stroke by stroke: the flock, the Latin wordmark and the Arabic wordmark built and locked into one bilingual signature.', video: 'films/streak_construct.mp4', poster: 'stc_poster' },
+      { t: 'full', natural: true, img: 'st2_booklet', alt: 'Hands holding the Streak company profile on a wooden table' },
+      { t: 'full', natural: true, img: 'st2_open', alt: 'The Streak profile open: Creating Memories, Designing Moments' },
+      { t: 'full', natural: true, img: 'st2_cover', alt: 'Close-up of the Streak profile cover in brown and blue-grey' },
+      { t: 'full', natural: true, img: 'st2_held', alt: 'The Streak booklet held in two hands' },
+      { t: 'full', natural: true, img: 'st2_folder', alt: 'The Streak presentation box opened' },
+      { t: 'full', natural: true, img: 'st2_cards', alt: 'Streak business cards' },
+      { t: 'full', natural: true, img: 'st2_sticker', alt: 'A Streak sticker on kraft paper' },
+      { t: 'full', natural: true, img: 'st2_fabric', alt: 'The Streak bilingual wordmark on a fabric-covered panel' }
+    ]
+  },
+  {
+    id: 'wedx', name: 'WEDX', short: 'derived from a compass',
+    line: 'A Saudi events company, repositioned from the team that executes events to the one that develops them.',
+    market: 'Saudi Arabia', sector: 'Events & exhibitions', derived: 'A compass', role: 'Strategy, concept, identity',
+    thumbs: ['wd_62', 'wd_69', 'wd_71'], hero: 'wd_62', film: 'films/wedx.mp4', filmPoster: 'wdv_poster',
+    challenge: 'WEDX was seen as an executor: the team you call to build what someone else planned. To win bigger work from global brands and government, it had to be seen as the one who develops the event.',
+    insight: 'Every client arrives from a different direction: a car launch, a bank conference, a national celebration. What they need is not another supplier. They need a bearing.',
+    idea: 'A compass. Its four points became four values, and the X at its centre became the name: World Events Developers, a partner in success, not only a team that executes.',
+    rows: [
+      { t: 'text', h: 'Four points, four values', p: 'The compass shows that WEDX can adapt to any client in the market, whatever their sector or business, and steer them to their goals. North is innovation, east is efficiency, south is flexibility, west is direction.', img: 'wd_5', alt: 'A compass with the four WEDX values in Arabic: innovation, efficiency, flexibility, direction' },
+      { t: 'pair', imgs: ['wd_7', 'wd_9'], alts: ['References: 360° consulting and three-dimensional axes', 'The WEDX X with the compass points N, E, S, W'], cap: 'Axes that point every way and 360° consulting, reduced to one X with a compass inside it.' },
+      { t: 'text', right: true, h: 'From executor to developer', p: 'The new lockup is a strategic repositioning: it builds trust with current partners and opens bigger work through integrated solutions. WEDX is redefined as a large developer of events and exhibitions, and a partner in success.', img: 'wd_14', alt: 'The WEDX X with World Events Developers on black' },
+      { t: 'trio', imgs: ['wd_17', 'wd_18', 'wd_22'], alts: ['The WEDX diamond in magenta and red', 'The WEDX diamond in purple', 'The WEDX diamond in orange'], cap: 'One diamond, many moods: the mark takes on the colour of each kind of event.' },
+      { t: 'full', img: 'wd_49', alt: 'A Honda exhibition stand with the WEDX mark' },
+      { t: 'pair', imgs: ['wd_47', 'wd_53'], alts: ['WEDX campaign: A Moment of Creativity', 'WEDX campaign: A New Vision for the Future'] },
+      { t: 'full', img: 'wd_51', alt: 'A WEDX event tunnel lit in magenta' },
+      { t: 'pair', imgs: ['wd_55', 'wd_64'], alts: ['A WEDX stage design for Alape', 'WEDX event screen: An Unforgettable Moment of Interaction'] },
+      { t: 'full', img: 'wd_69', alt: 'WEDX pillars at an event venue' },
+      { t: 'pair', imgs: ['wd_56', 'wd_68'], alts: ['WEDX flags against the sky', 'A WEDX billboard on a building'] },
+      { t: 'pair', imgs: ['wd_57', 'wd_58'], alts: ['WEDX print pieces', 'A WEDX brochure in hand'] },
+      { t: 'full', img: 'wd_65', alt: 'A WEDX exhibition stand' },
+      { t: 'pair', imgs: ['wd_71', 'wd_73'], alts: ['A WEDX box in hand', 'WEDX crew vests'] },
+      { t: 'full', img: 'wd_78', alt: 'A WEDX truck in a warehouse' },
+      { t: 'full', img: 'wd_81', alt: 'A WEDX entrance gate at night' },
+      { t: 'pair', imgs: ['wd_76', 'wd_79'], alts: ['A cap with the WEDX X', 'The WEDX app on a phone'] }
+    ]
+  }
+];
+
+const LAYOUT = [
+  { id: 'coastra', big: true }, { id: 'haseen' }, { id: 'al-qusoor-al-hamra' },
+  { id: 'istidama' }, { id: 'tegrensee' }, { id: 'qomel', big: true },
+  { id: 'streak', half: true }, { id: 'wedx', half: true }
+];
+
+const $ = (s, r = document) => r.querySelector(s);
+const main = $('#main');
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const src = (n) => 'img/' + n + '.jpg';
+const byId = Object.fromEntries(CASES.map((c) => [c.id, c]));
+
+function imgTag(n, alt, extra = '') {
+  return '<img src="' + src(n) + '" alt="' + esc(alt) + '" loading="lazy" ' + extra + '>';
+}
+function fig(n, alt, contain) {
+  return '<div class="fig' + (contain ? ' fig--contain' : '') + '">' + imgTag(n, alt) + '</div>';
+}
+
+const SERVICES = [
+  { n: '01', h: 'Brand Strategy', lead: 'Finding the idea the brand already holds, and building the case for it.', img: 'svc_strategy', alt: 'The Streak concept: the flock for unity and rhythm, the falcon for precision, the formation for the path',
+    items: ['Big Idea', 'Naming', 'Brand positioning', 'Brand personality', 'Brand story', 'Taglines', 'Ideal buyer persona', 'Competitive landscape analysis', 'Moodboards', 'Case studies'] },
+  { n: '02', h: 'Visual Identity', lead: 'Turning that idea into a system people can see, use and remember.', img: 'st2_hall', alt: 'Streak banners and screen in an exhibition hall',
+    items: ['Logo design', 'Colour palette', 'Typography', 'Photography and iconography', 'Website design', 'Business cards and stationery', 'Social media', 'Packaging', 'Branding and marketing collateral', 'Brand identity guidelines'] }
+];
+function renderServices() {
+  main.innerHTML = '<section class="svc" aria-label="Services"><div class="svc__head grid3"><h2>Services</h2><p>One sequence, two disciplines. The strategy finds the idea; the identity makes it visible.</p></div><div class="svc__grid">' +
+    SERVICES.map((v) => '<article class="svc__item"><figure>' + '<img src="' + src(v.img) + '" alt="' + esc(v.alt) + '" loading="eager">' + '</figure>' +
+      '<h3><span>' + v.n + '</span>' + esc(v.h) + '</h3><p class="svc__lead">' + esc(v.lead) + '</p>' +
+      '<ul class="svc__list">' + v.items.map((it) => '<li>' + esc(it) + '</li>').join('') + '</ul></article>').join('') +
+    '</div></section>';
+  wireCards();
+}
+const STRATEGIES = [
+  {
+    id: 'coastra', name: 'COASTRA', sector: 'Premium lifestyle: apparel, fragrance, objects', market: 'Australia', img: 'cx_48', caseId: 'coastra',
+    q: 'How do you build a luxury brand for a country whose people do not share one origin?',
+    a: 'Root it in the one thing every Australian shares: the land itself.',
+    secs: [
+      { h: 'The brief', k: 'list', items: ['A lifestyle ecosystem, not only an apparel label, reflecting coastal luxury and Australian identity.', 'A loyal community around a refined, authentic way of life.', 'High-end pricing, justified by design depth, materials and development time.', 'A modern / vintage luxury mood, drawn from harbours, beaches, classic sports, antique maps and archival posters.', 'Every product treated as a collectible cultural piece, not a passing consumer item.', 'One emotional promise: “an endless Australian summer”.'],
+        note: 'The brief asked for a premium label. What it actually described was belonging. That gap set the direction for everything after it.' },
+      { h: 'The real problem', k: 'text', text: 'The client’s working name was “5th Star”. It looked harmless, and it was a strategic trap.', items: ['It is tied to the current flag, which carries the British colonial era and the penal colonies.', 'It reminds Indigenous Australians, about 3.2% of the population, of the Frontier Wars, and says nothing to the nearly 30% with roots abroad.', 'The flag itself is under public debate, so investing in it is a long-term commercial risk.', 'The fifth star is the smallest and faintest in the constellation: no metaphor, no story to tell.', 'A number plus words is long and weak across logos, apparel, packaging and small sizes.'],
+        note: 'Before anything was designed, I argued the client out of their own name. A brand meant to unite cannot start from a symbol that divides.' },
+      { h: 'The market', k: 'compare', rows: [
+          { name: 'Clothing The Gaps', note: 'Built on political guilt.' },
+          { name: 'HoMie', note: 'Built on a charity model and emotional pity.' },
+          { name: 'Nagnata', note: 'Isolated, elitist luxury.' },
+          { name: 'Pass~Port', note: 'Surface-level street graphics.' },
+          { name: 'COASTRA', note: 'The only vacant space: inclusive, knowledge-driven, for all Australians, free from political polarisation.', us: true }
+        ], after: 'Excluded on purpose, to protect the position: political radicals, fast-fashion buyers, and anyone rejecting Indigenous culture.',
+        note: 'Each competitor owned one emotion. The opening was the one nobody had claimed: belonging without guilt, pity or exclusion.' },
+      { h: 'The audience', k: 'audience', sub: 'Ages 18 to 45', cards: [
+          { h: 'The modern coastal native', p: 'Australians of European descent in coastal cities, whose Australia ends at the beach. Looking for a deeper identity.' },
+          { h: 'The first-generation immigrant', p: 'Arab, Indian, Chinese and Southeast Asian backgrounds. Wants to belong without giving up their heritage.' },
+          { h: 'The second-generation immigrant', p: 'Born in Australia to immigrant parents, caught between two belongings, searching for one they can claim.' },
+          { h: 'Urban Aboriginal youth', p: 'Living in cities, far from ancestral land. Wants a brand that celebrates the intellect of their ancestors.' }
+        ], wants: ['Pure belonging to the land, under one sky.', 'Neutral ground that accepts them for knowing the land, not for race, lineage or past conflicts.', 'Pride through hard science: geography and ancestral knowledge as verified fact, not folklore or pity.'],
+        note: 'Four very different people with one shared need: a way to belong that never asks where you came from.' },
+      { h: 'The big idea', k: 'statement', text: 'The land grants its light, vastness and sense of belonging to everyone who steps upon it.', sub: 'The land is the only fair judge. It dissolves the racial and ideological divides between Australians.' },
+      { h: 'The name', k: 'options', options: [{ n: 'COASTRA', on: true }, { n: 'BIORA' }, { n: 'NULLARA' }],
+        note: 'All three options spring from the soil, a land that stretches back more than 65,000 years. COASTRA carries the coast in its name: the landscape the whole brand is built on.' },
+      { h: 'The platform', k: 'statements', items: [
+          { l: 'Positioning', t: 'The first Australian brand to shape an inclusive luxury culture that welcomes everyone.' },
+          { l: 'Purpose', t: 'Turning the culture and land of the continent into an inclusive cultural bridge.' },
+          { l: 'Goal', t: 'A unified sense of belonging for everyone Australia embraces, whatever their origin.' },
+          { l: 'Slogan', t: 'Boundless Horizon', s: 'A descriptor like “premium streetwear” would have capped the brand. This line lets it grow into apparel, niche fragrance, eyewear and objects without a rename.' }
+        ], chips: ['A land for all', 'Sovereign elegance', 'Rooted authenticity'] },
+      { h: 'Tone, look & feel', k: 'sliders', rows: [['Luxury', 'Cool', .06], ['Composed', 'Expressive', .25], ['Structured', 'Free-form', .17], ['Credible', 'Amateur', 0], ['Grounded', 'Unsettling', .03], ['Layered', 'Minimal', .75], ['Precise', 'Fluid', .16], ['Documented', 'Evocative', .24]],
+        note: 'Every slider leans to the evidence side: credible, grounded, documented. Luxury that proves itself instead of performing.' }
+    ]
+  },
+  {
+    id: 'evervow', name: 'EVERVOW', sector: 'Fashion and couture', market: 'Saudi Arabia → global', img: 'ev_045',
+    q: 'Can one fashion name carry a vision, a craft and a personal cause at the same time?',
+    a: 'Yes, if every syllable is a promise: EVER for what lasts, VOW for what is meant.',
+    secs: [
+      { h: 'The brief, as four tests', k: 'statements', items: [
+          { l: 'Vision', t: 'A long-term brand, untouched by trends and passing change.' },
+          { l: 'Mission', t: 'Real, personal support for the autism spectrum, born from lived experience.' },
+          { l: 'Product', t: 'Simple on the surface, intricate in execution.' },
+          { l: 'Scope', t: 'Global and local at once.' }
+        ], note: 'I read the brief as four tests the name had to pass, not four lines of background. Any name that failed one of them was out.' },
+      { h: 'The name, decoded', k: 'decode', parts: [
+          { w: 'EVER', items: [
+            { h: 'The vision', p: 'The opposite of a passing trend. A promise of continuity.' },
+            { h: 'The craft', p: 'Pieces simple in form and intricate in design, made to last.' },
+            { h: 'The inspiration', p: 'AlUla: its rock colours and wave-like strata as the physical form of permanence.' } ] },
+          { w: 'VOW', items: [
+            { h: 'The mission', p: 'A sincere, deep commitment to supporting the autism spectrum. It gives the brand absolute credibility.' },
+            { h: 'The quality', p: 'A vow to deliver intricate craft: French pattern-making and corsetry finishing.' } ] },
+          { w: 'EVERVOW', items: [
+            { h: 'One word', p: 'A single, unique proper noun: easy to register worldwide, and a 100% match across domains: evervow.sa and @evervow.' } ] }
+        ], note: 'The name is not a creative pick. It is the result of an analysis that proves it is the strategic choice for carrying the brand’s essence: luxurious, intricate simplicity.' },
+      { h: 'The market', k: 'compare', rows: [
+          { name: 'Hermès', note: 'Absolute craft and eternal heritage. Speaks to the mind: cold, aristocratic, product-first.' },
+          { name: 'Loro Piana', note: 'The world’s finest raw materials. Speaks to the senses: soft, built on touch.' },
+          { name: 'Brunello Cucinelli', note: 'Humanist capitalism and craft. The closest: mind and heart, but its message points inward, to its people and its village.' },
+          { name: 'The Row', note: 'Intellectual, artistic simplicity. Cold, almost silent.' },
+          { name: 'EVERVOW', note: 'Intricate simplicity plus an eternal vow: warm, sincere, personal. The quality of Hermès and The Row with the warmth of Cucinelli, in one identity.', us: true }
+        ], note: 'Every luxury house chooses between the mind and the heart. The white space was a brand that refuses to choose.' },
+      { h: 'Strategic edge', k: 'chips', chips: ['Global by design', 'Clear competitive position', 'Solves the classic & modern dilemma'] },
+      { h: 'The voice', k: 'statement', text: 'A voice that speaks simply about complex things.', chips: ['Precise & deliberate', 'Profound', 'Intelligent & refined'] },
+      { h: 'The line', k: 'statement', text: 'Woven Saudi Soul', sub: 'روح سعودية منسوجة' }
+    ]
+  },
+  {
+    id: 'totem', name: 'TOTEM', sector: 'Women’s tailoring', market: 'Kuwait', role: 'Brand Director', img: 'mb_totem', film: 'films/totem.mp4', filmPoster: 'ttv_poster', imgCap: 'The brand film: from the dream to the kick, the mark, the type and the first pieces.',
+    q: 'How do you sell a suit to women who see the suit as a uniform?',
+    a: 'Don’t sell the suit. Sell the moment she wakes up from someone else’s dream.',
+    secs: [
+      { h: 'The brief', k: 'list', items: ['A Kuwaiti fashion brand inspired by Inception: the totem turns from a symbol inside a dream into a tangible piece.', 'For women aged 20 to 30. Bold and modest at once, custom-made to reflect each client’s presence and identity.', 'Sharp tailoring, an inclusive fit and a contemporary surreal style, for business owners and working women, not only for evening events.', 'Not a suits brand, but a “fashion awakening”: every piece is the kick that brings her back to a reality of her own.'],
+        note: 'The film gave the brand its whole grammar: the totem, the kick, the dream. Using one metaphor all the way through is what makes it ownable.' },
+      { h: 'The audience', k: 'audience', sub: 'Ages 20 to 30', cards: [
+          { h: 'The new women', p: 'Ambitious, early in their careers, refusing dress codes that freeze their femininity behind a conventional look.' },
+          { h: 'The seekers of meaning', p: 'For them a suit is not clothing but inception: identity, ambition and self-image, woven together.' },
+          { h: 'The explorers of difference', p: 'Drawn to emerging, unconventional fashion. Want exceptional pieces that work with their character.' }
+        ], wants: ['Sovereignty: a piece that works as armour for work, society and self-expression.', 'Philosophical distinction: a manifesto beyond fabric, so her presence speaks before she does.', 'Belonging to her true self, not to someone else’s version of who she should be.'],
+        note: 'None of these women is asking for a better suit. Each is asking to own herself. That shifts the brand from product to permission.' },
+      { h: 'The values', k: 'chips', chips: ['Modest boldness', 'Absolute sovereignty', 'From dream to reality'] },
+      { h: 'The big idea', k: 'statement', text: 'Awakening from conformity to the dreams of others, and returning to absolute self-sovereignty.' },
+      { h: 'The platform', k: 'statements', items: [
+          { l: 'Goal', t: 'Plant the idea of absolute sovereignty in the mind of the conscious woman. A TOTEM piece is the physical kick that wakes her.' },
+          { l: 'Positioning', t: 'TOTEM cuts the cord of imposed dreams, restoring her absolute sovereignty over the reality that is truly hers.' },
+          { l: 'Purpose', t: 'To dismantle borrowed illusions and rebuild a reality owned by no one but her.' },
+          { l: 'Slogan', t: 'Impose your vision. Rule your reality.' }
+        ] },
+      { h: 'Tone, look & feel', k: 'sliders', rows: [['Formal', 'Cool', .76], ['Composed', 'Expressive', .69], ['Structured', 'Free-form', .3], ['Clean', 'Creative', .75], ['Professional', 'Amateur', .02], ['Safe', 'Unsettling', .82], ['Sharp', 'Soft', .2], ['Distorted', 'Architectural', .17]],
+        note: 'Fully professional, yet deliberately unsettling and distorted: the feeling of a dream starting to crack.' }
+    ]
+  },
+  {
+    id: 'lant', name: 'LANT', sector: 'Handmade premium woodwork', market: 'Saudi Arabia', img: 'mb_lant', imgCap: 'Direction moodboard: biological, calm, fluid.',
+    q: 'How does a handmade wooden piece earn a premium in a market that buys wood for its function?',
+    a: 'Treat the wood as alive: a piece that matures with its owner and is meant to be inherited.',
+    secs: [
+      { h: 'The brief', k: 'list', items: ['Born in Al-Ahsa from a founder’s passion for turning raw material into living objects.', 'Handmade pieces in the finest cherry and mahogany, finished naturally with almond oil and honey wax.', 'For ages 24 to 45 across the Kingdom: pieces that are practical to use and luxurious to own.', 'An ambition beyond today: from digital sales to complete wooden design solutions.'],
+        note: 'The client’s own line was “the first Saudi brand of premium wooden products”. Being first is a fact, not a reason to pay more. The strategy had to find the reason.' },
+      { h: 'The audience', k: 'audience', cards: [
+          { h: 'B2C · individuals', p: 'Collectors of unique pieces that go beyond function; owners of homes and offices who love solid geometry and natural materials; people giving gifts meant to last for years.', list: ['The senses: warm touch, natural scent, a link to living nature.', 'Rarity: no two pieces alike, because of the natural grain.', 'A premium feeling of owning something precious.'] },
+          { h: 'B2B · businesses', p: 'Boutique hotels creating a natural, sensory stay; corporate gifting for VIP clients; coffee accessory retailers.', list: ['Standard quality: CNC precision so pieces match across large projects.', 'Reliability: a national supplier using 100% natural materials.', 'Customisation, and professional delivery on time.'] }
+        ], note: 'Two very different buyers want the same proof: that this wood is worth keeping. Individuals feel it; businesses need it measured.' },
+      { h: 'The values', k: 'chips', chips: ['Living purity', 'Sustainability', 'Harmony of technology and craft'] },
+      { h: 'The shift', k: 'statement', text: 'From product to heirloom.', sub: 'Buying a LANT piece becomes owning an heirloom whose value grows with its owner over time, thanks to a natural “breathing” finish that keeps the wood from dying or cracking.' },
+      { h: 'The platform', k: 'statements', items: [
+          { l: 'Positioning', t: 'From the heart of nature, with a purely Saudi signature, we treat wood as a living being that matures in premium pieces made to pass heritage across generations.' },
+          { l: 'Purpose', t: 'Preserving the pulse of the wood through pure craft, so it becomes a living, lasting heritage.' },
+          { l: 'Slogan', t: 'إرثٌ حيٌّ يتنفس', s: 'A living heritage that breathes.' },
+          { l: 'Big idea', t: 'مقتنيات تُورَث', s: 'Pieces made to be inherited.' }
+        ] },
+      { h: 'Tone, look & feel', k: 'sliders', rows: [['Classic & authentic', 'Modern & advanced', .75], ['Calm luxury', 'Narrative & sensory', .5], ['Clean & simple', 'Complex & layered', .08], ['Formal', 'Informal', .02], ['Professional', 'Amateur', .02], ['Refined', 'Youthful', .13]],
+        note: 'Modern in form, refined and formal in manner: heirloom quality without looking old.' }
+    ]
+  },
+  {
+    id: 'majal', name: 'Majal Al-Enjaz', sector: 'Heritage restoration and contracting', market: 'Saudi Arabia, since 2005', img: 'mb_majal',
+    q: 'How does a contractor stand out in a crowded market without looking any less serious?',
+    a: 'Let order and clarity do the talking: an identity that shows impact, without the noise.',
+    secs: [
+      { h: 'The brief', k: 'list', items: ['A Saudi company in excavation, restoration and documentation of archaeological sites and urban heritage, working with major government bodies.', 'Founded in 2005, with deep experience and strong partnerships with official entities.', 'Now expanding into public contracting and integrated project delivery.', 'Supporting Vision 2030, with future growth beyond the Kingdom, while protecting heritage.'] },
+      { h: 'The goals', k: 'chips', chips: ['A consistent, strong identity', 'Distinction and professionalism, balanced', 'Standing out in a very crowded market', 'A deliberate rebrand', 'Uniqueness that reflects ambition'],
+        note: 'The tension sits in one goal: government clients reward seriousness, a crowded market rewards difference. The strategy had to deliver both, not average them.' },
+      { h: 'The position', k: 'statement', text: 'An official identity built on order and clarity, that shows impact without noise.' },
+      { h: 'Tone, look & feel', k: 'sliders', rows: [['Formal', 'Casual', .1], ['Composed', 'Expressive', .25], ['Structured', 'Free-form', .05], ['Clean', 'Cluttered', .1], ['Professional', 'Amateur', .15]] },
+      { h: 'Values into form', k: 'audience', cards: [
+          { h: 'Transparency', p: 'The separating gaps in the mark: clarity, no overlap.' },
+          { h: 'Ambition', p: 'A rising viewing angle that carries growth.' },
+          { h: 'Expertise & roots', p: 'A three-dimensional side face that shows history and depth.' },
+          { h: 'Credibility', p: 'Heavy, solid blocks that signal stability and financial security.' },
+          { h: 'Professionalism', p: 'Strict geometric discipline: perfectly parallel verticals for absolute commitment.' },
+          { h: 'Memory', p: 'The verticals read as an M, anchoring the name in the audience’s mind.' }
+        ], note: 'Each value became a measurable part of the mark, so the strategy can be checked in the logo itself.' },
+      { h: 'The naming decision', k: 'statement', text: 'Dropping the word “company” freed the name from administrative limits, and turned it into an icon.', sub: 'The bare name carries its own authority, ready for growth inside and outside the Kingdom, and it positions Majal Al-Enjaz as a solid executive partner with weight of its own beside government bodies, not just a follower.',
+        note: 'Removing one word did more strategic work than any visual.' },
+      { h: 'The lines', k: 'chips', chips: ['Toward new horizons', 'Toward achievements that fill the horizon'] }
+    ]
+  },
+  {
+    id: 'mawlo', name: 'Mawlo', sector: 'Oral care and teeth whitening', market: 'Europe', img: 'mb_ssd', imgCap: 'Direction moodboard: bold, geometric, cool.',
+    q: 'How do you turn a medical routine into something people want to show off?',
+    a: 'Leave the clinic behind: the new cool brand in the category, built for Gen-Z first.',
+    secs: [
+      { h: 'The brief', k: 'list', items: ['Turn teeth whitening from a traditional medical procedure into a smart, daily wellness experience.', 'A pack that pairs whitening strips with a results-boosting mouthwash, made to fill a gap in the European market.', 'Safe, 100% suitable for sensitive gums, and pain-free.', 'Packaging innovation as a core competitive edge.', 'The digital generations’ hunger for instant, visible results, backed by German scientific credibility.'] },
+      { h: 'The shelf', k: 'list', items: ['Dull medical classicism.', 'Visual clutter.', 'Poor materials.', 'No visual personality across the whole shelf.', 'No “cool factor”: designs that look a decade old.'],
+        note: 'I did not look for the best competitor. I looked for what the whole shelf had in common, and that became the opening.' },
+      { h: 'The audience', k: 'audience', cards: [
+          { h: 'Millennials', p: 'Modern, simple design with a focus on quality and precision. Bold colour that follows trends. Easy to use.' },
+          { h: 'Gen-Z · focus niche', p: 'Modern design in bold colours. Interaction and fun in the experience. Striking, unexpected design elements.' }
+        ], after: 'Gen-Z are the early adopters, so they lead. If you are talking to everyone, you are talking to no one.',
+        note: 'Choosing one audience to lead is a decision most briefs avoid. Here it made every later choice easier.' },
+      { h: 'The platform', k: 'statements', items: [
+          { l: 'Goal', t: 'Break the rules of traditional oral care and create a new routine, full of fun and effectiveness, distinctive and safe every time.' },
+          { l: 'Value', t: 'A completely new feeling for the care routine: every moment more fun and more effective, safely.' },
+          { l: 'Positioning', t: 'The new cool brand in the market.' },
+          { l: 'Slogan', t: 'Bolder Smile.' }
+        ] },
+      { h: 'The name', k: 'options', options: [{ n: 'KRANZ' }, { n: 'MAWLO', on: true }, { n: 'SPARKZ' }], note: 'Three name routes for the client, all short and bold, in the same spirit as the slogan.' },
+      { h: 'Tone, look & feel', k: 'sliders', rows: [['Formal', 'Cool', .75], ['Composed', 'Expressive', .75], ['Structured', 'Free-form', .5], ['Clean', 'Saturated', .5], ['Dull', 'Creative', .97], ['Professional', 'Amateur', .03]] }
+    ]
+  },
+  {
+    id: 'tegrensee', name: 'Tegrensee', sector: 'Café group', market: 'Saudi Arabia', img: 'tgs_refs', imgCap: 'Part of the research: 200+ swan references, species and anatomy.', caseId: 'tegrensee',
+    q: 'When does a logo become the biggest obstacle to a business’s growth?',
+    a: 'When it holds the story but can’t carry the expansion. So: modernise everything, and keep the story.',
+    secs: [
+      { h: 'The situation', k: 'list', items: ['A Saudi café group in the middle of expansion.', 'An old logo that was part of the brand’s history, and one people were genuinely attached to.', 'In practice, it could not handle the many applications the new stage demanded.', 'And it no longer reflected where the business wanted to go.'],
+        note: 'The logo was not failing on looks. It was failing at work. That changed the job from “make it prettier” to “make it work everywhere, without losing the regulars”.' },
+      { h: 'The hard decision', k: 'compare', rows: [
+          { name: 'Change everything', note: 'A clean slate, at the risk of losing the loyal audience and the regulars who love the place.' },
+          { name: 'Keep it as it is', note: 'Safe with the regulars, but it keeps blocking the expansion.' },
+          { name: 'Modernise, keep the story', note: 'A full modernisation that protects the original story: solving today’s problems and opening future horizons.', us: true }
+        ], note: 'The answer to a full change was no. The real work was finding a balance that keeps part of the old identity while giving the business an identity built for what comes next.' },
+      { h: 'The research', k: 'list', items: ['More than 200 swan references collected.', 'Swan species studied, and the differences between them, to understand anatomy and movement.', 'A drawing style defined so the icon could be applied flexibly in the real world.'],
+        note: 'The strategy decided what to keep. The research decided how to draw it.' },
+      { h: 'The craft', k: 'list', items: ['Sketch after sketch, built on one of the client’s strongest preferences: the most beautiful possible neck and body for the swan.', 'A form flexible enough for print, expansion, packaging, and the interior design of the cafés.', 'The hardest part: making the icon and the chosen typeface work together in complete harmony.'] },
+      { h: 'The result', k: 'statement', text: 'The original story kept, and a logo that finally works for the business.', sub: 'The new mark solved many of the problems the business faced on the ground, kept the story the regulars love, and reflects the brand’s future vision with a professional finish.' }
+    ]
+  },
+  {
+    id: 'elu', name: 'ÉLU', sector: 'Luxury chocolate and gifting', market: 'Kuwait', role: 'Brand Director', img: 'mb_choc', imgCap: 'Direction moodboard: fancy, minimal.',
+    q: 'How does a chocolate brand stand out when every luxury competitor already looks the same?',
+    a: 'Stop competing on the box. Put the luxury where only the discerning will notice it.',
+    secs: [
+      { h: 'The brief', k: 'list', items: ['A new concept for luxury chocolate, built on more than the product, and far from the usual reliance on ornament and visual excess.', 'Not another chocolate shop, but a destination for refined gifting, with its own personality, product, service and way of presenting.', 'Men and women aged 18 to 55, individuals, companies and event planners, who value quality, experience and packaging over the lowest price.', 'A full boutique experience: consultation, personalisation, professional wrapping and a dedicated service for occasions and corporate orders.', 'Value-based pricing, far from discounts and price wars. Chocolate first, with hospitality elements added later without changing the identity.'],
+        note: 'The brief already ruled out ornament and discounting. That left one honest question: if not decoration and not price, where does the luxury live?' },
+      { h: 'The audience', k: 'audience', sub: 'Ages 18 to 55 · B2C and B2B', cards: [
+          { h: 'Gift seekers', p: 'Buy chocolate as gifts for visits, holidays, birthdays and celebrations. Want a refined gift that reflects their taste, without wasting time or worrying over the choice.', list: ['After: they leave sure the gift represents their taste and leaves a lasting impression.'] },
+          { h: 'Luxury lifestyle buyers', p: 'Buy for themselves or their families. Want a refined, different experience that expresses their taste, away from traditional or commercial luxury.', list: ['After: they feel they discovered a brand that speaks for their taste, a calm luxury unlike the rest.'] },
+          { h: 'Corporate clients', p: 'Companies, banks and government bodies gifting clients, employees and partners. Want gifts that reflect their image, and a supplier they can rely on.', list: ['After: a trusted partner that represents their brand with the same professionalism they hold themselves to.'] },
+          { h: 'Event planners', p: 'Wedding, event and occasion planners. Want a partner who delivers fast and precisely, and takes supplier pressure off them.', list: ['After: a partner they rely on every time, so they can focus on the event, not on managing problems.'] }
+        ], after: 'The common thread: whatever the motive, every group wants to leave a positive impression of its own taste and values. They don’t buy chocolate. They buy confidence, an experience, and the impression a gift leaves on others.',
+        note: 'Four buyers, one purchase: not chocolate, but the impression it leaves. That moved the brand from selling a product to protecting a reputation.' },
+      { h: 'The market', k: 'compare', rows: [
+          { name: 'DARK', note: 'Luxury chocolatier meets contemporary lifestyle. Neutral black, white and grey with orange accents; luxury through simplicity and boldness.' },
+          { name: 'HAVEN', note: 'Luxury chocolatier meets luxury hospitality. Dark palette, low-key lighting, the café experience as much as the product.' },
+          { name: 'VAD', note: 'Luxury chocolatier meets design brand. Bold colours and clean studio light; luxury through design, colour and packaging.' },
+          { name: 'BONBONIQUE', note: 'Pure quiet luxury: the product is the hero everywhere, value built on craft rather than packaging.' },
+          { name: 'The white space', note: 'Most of the market builds luxury through presentation and the same neutral codes. With products and visuals this alike, strategy, positioning, experience and communication are the real room to stand apart.', us: true }
+        ], after: 'Key insights: packaging is now part of perceived value; the product is the hero almost everywhere; the most distinctive brands own a signature product or experience; and store experience builds identity, not only sales.',
+        note: 'I didn’t study competitors to copy their best moves. I studied them to see what they all share. When everyone speaks the same visual language, the gap is no longer visual.' },
+      { h: 'The big idea', k: 'statement', text: 'Refinement lies in the unseen.', sub: 'True luxury is not in what everyone sees, but in the hidden details crafted with care, noticed only by the discerning few. When we perfect what no one sees, we prove that our refinement is who we are, not a face we put on.' },
+      { h: 'The platform', k: 'statements', items: [
+          { l: 'Value', t: 'Luxury that speaks softly, understood only by those who know the difference.' },
+          { l: 'Goal', t: 'The name the discerning few turn to when nothing less than the finest will do.' },
+          { l: 'Positioning', t: 'The most refined brand in the Kuwaiti market.' },
+          { l: 'Purpose', t: 'Crafting luxury for those who truly appreciate it.' },
+          { l: 'Tagline', t: 'Only the few know the difference.' }
+        ] },
+      { h: 'The name', k: 'decode', parts: [
+          { w: 'ÉLU ✓', items: [{ h: 'The chosen name', p: 'French for “selected with care”: true value lies not in buying, but in the discernment of the choice.' }] },
+          { w: 'EDELIA', items: [{ h: 'The noble', p: 'From the German “edel”, noble or refined: a symbol of sophistication and distinction.' }] },
+          { w: 'CLARET', items: [{ h: 'The deep red', p: 'A traditional British term for dry red Bordeaux wine, and the deep purplish-red named after it.' }] },
+          { w: 'OPALIA', items: [{ h: 'The inner brilliance', p: 'Inspired by the opal: rare, with a captivating inner light. Unique beauty, discovery and precious detail.' }] }
+        ], note: 'Every route carries the same idea from a different angle: choice, nobility, depth or inner light. Luxury that is felt before it is seen. ÉLU became the final name.' },
+      { h: 'The story', k: 'statement', text: 'The Art of Creation', sub: 'Chocolate begins fluid, rich, expressive and untamed. Through craft, precision and time, it becomes something beautifully defined. ÉLU was born from that transformation: the meeting point between the natural fluidity of chocolate and the discipline of artisanal craft. Every piece is shaped with intention, turning a simple bite into an experience of elegance, indulgence and refined detail, made for moments that deserve more than the ordinary.',
+        note: 'The brand story is the big idea told as a process: untamed material, disciplined by craft. It gave the identity its one rule: fluid, but always controlled.' },
+      { h: 'From idea to mark', k: 'list', items: ['The logo is inspired by the graceful flow of molten chocolate, turning its fluid movement into a distinctive visual signature.', 'Its refined lines express craftsmanship, indulgence and sophistication: a timeless mark for a truly luxurious chocolate brand.'] },
+      { h: 'Tone, look & feel', k: 'sliders', rows: [['Playful', 'Sophisticated', .79], ['Product-led', 'Experience-led', .75], ['Abundance', 'Rarity', .66], ['Casual', 'Aspirational', .81], ['Trend-driven', 'Timeless', .85]],
+        note: 'Every slider leans away from the market’s easy wins: rarity over abundance, timeless over trend, experience over product.' }
+    ]
+  }
+];
+const stById = Object.fromEntries(STRATEGIES.map((s) => [s.id, s]));
+
+function stBody(x) {
+  const chips = (arr) => '<div class="st__chips">' + arr.map((c) => '<span>' + esc(c) + '</span>').join('') + '</div>';
+  let h = '';
+  if (x.k === 'list') h = '<ul class="st__list">' + x.items.map((i) => '<li>' + esc(i) + '</li>').join('') + '</ul>';
+  if (x.k === 'text') h = '<p class="st__lead">' + esc(x.text) + '</p>' + (x.items ? '<ul class="st__list">' + x.items.map((i) => '<li>' + esc(i) + '</li>').join('') + '</ul>' : '');
+  if (x.k === 'statement') h = '<p class="st__big">' + esc(x.text) + '</p>' + (x.sub ? '<p class="st__sub">' + esc(x.sub) + '</p>' : '') + (x.chips ? chips(x.chips) : '');
+  if (x.k === 'statements') h = x.items.map((i) => '<div class="st__stmt"><span>' + esc(i.l) + '</span><p>' + esc(i.t) + '</p>' + (i.s ? '<em>' + esc(i.s) + '</em>' : '') + '</div>').join('') + (x.chips ? '<div class="st__stmt"><span>Values</span>' + chips(x.chips) + '</div>' : '');
+  if (x.k === 'chips') h = chips(x.chips);
+  if (x.k === 'compare') h = '<div class="st__cmp">' + x.rows.map((r) => '<div class="st__cmprow' + (r.us ? ' is-us' : '') + '"><b>' + esc(r.name) + '</b><span>' + esc(r.note) + '</span></div>').join('') + '</div>' + (x.after ? '<p class="st__sub">' + esc(x.after) + '</p>' : '');
+  if (x.k === 'audience') h = (x.sub ? '<p class="st__kick">' + esc(x.sub) + '</p>' : '') + '<div class="st__cards" style="--n:' + Math.min(x.cards.length, 3) + '">' + x.cards.map((c) => '<div class="st__card"><h4>' + esc(c.h) + '</h4><p>' + esc(c.p) + '</p>' + (c.list ? '<ul class="st__list st__list--sm">' + c.list.map((i) => '<li>' + esc(i) + '</li>').join('') + '</ul>' : '') + '</div>').join('') + '</div>' +
+    (x.wants ? '<p class="st__kick">What matters to them</p><ul class="st__list">' + x.wants.map((i) => '<li>' + esc(i) + '</li>').join('') + '</ul>' : '') + (x.after ? '<p class="st__sub">' + esc(x.after) + '</p>' : '');
+  if (x.k === 'options') h = '<div class="st__opts">' + x.options.map((o) => '<span class="' + (o.on ? 'is-on' : '') + '">' + esc(o.n) + (o.on ? '<i>Chosen</i>' : '') + '</span>').join('') + '</div>';
+  if (x.k === 'decode') h = x.parts.map((p) => '<div class="st__dec"><b>' + esc(p.w) + '</b><div>' + p.items.map((i) => '<p><strong>' + esc(i.h) + '</strong> ' + esc(i.p) + '</p>').join('') + '</div></div>').join('');
+  if (x.k === 'sliders') h = '<div class="st__sl">' + x.rows.map((r) => '<div class="st__slrow"><span>' + esc(r[0]) + '</span><div class="st__bar"><i style="left:' + (r[2] * 100) + '%"></i></div><span>' + esc(r[1]) + '</span></div>').join('') + '</div>';
+  return h + (x.note ? '<aside class="st__note"><span>The thinking</span>' + esc(x.note) + '</aside>' : '');
+}
+function renderStrategy(st) {
+  const i = STRATEGIES.indexOf(st);
+  const next = STRATEGIES[(i + 1) % STRATEGIES.length];
+  main.innerHTML = '<article class="st">' +
+    '<header class="st__head"><p class="st__num"><a href="#mind">Mind Behind</a> · Strategy ' + String(i + 1).padStart(2, '0') + ' / ' + String(STRATEGIES.length).padStart(2, '0') + '</p>' +
+      '<h1>' + esc(st.name) + '</h1><p class="st__meta">' + esc(st.sector) + ' · ' + esc(st.market) + (st.role ? ' · My role: ' + esc(st.role) : '') + '</p>' +
+      '<div class="st__qa"><div><span>The question</span><p>' + esc(st.q) + '</p></div><div><span>The answer</span><p>' + esc(st.a) + '</p></div></div></header>' +
+    st.secs.map((x, k) => '<section class="st__sec"><h2><span>' + String(k + 1).padStart(2, '0') + '</span>' + esc(x.h) + '</h2><div class="st__body">' + stBody(x) + '</div></section>').join('') +
+    '<section class="st__sec st__out"><h2><span>→</span>From thinking to form</h2><div class="st__body">' + (st.film ? '<div class="film__frame"><video preload="none" playsinline poster="' + src(st.filmPoster) + '" src="' + esc(st.film) + '"></video><button type="button" class="film__play"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0E0E0D"></circle><path d="M10 8l6 4-6 4z" fill="#145CD1"></path></svg>Play film</button></div>' : '<figure><img src="' + src(st.img) + '" alt="' + esc(st.name + ' — ' + (st.imgCap || 'the identity in use')) + '" loading="lazy"></figure>') +
+      (st.imgCap ? '<p class="st__sub">' + esc(st.imgCap) + '</p>' : '') +
+      (st.caseId && byId[st.caseId] ? '<a class="st__link" href="#' + st.caseId + '">See the identity in Work →</a>' : '') + '</div></section>' +
+    '<a class="st__next" href="#mind/' + next.id + '"><span>Next strategy</span>' + esc(next.name) + '</a>' +
+    '</article>';
+  wireCards();
+  wireFilm();
+}
+
+const MIND_STEPS = [
+  { h: 'Research the market deeply', p: 'Market data, competitors, category codes, audience behaviour and commercial goals. No sketch before the facts.' },
+  { h: 'Find the gap', p: 'Where what people need and what the market offers stop matching. That gap is where the insight lives.' },
+  { h: 'Locate the white space', p: 'The position no competitor owns yet, and the one this brand can credibly claim.' },
+  { h: 'Analyse', p: 'Audiences, motivations, risks and opportunities, broken down until the pattern is clear.' },
+  { h: 'Shape the solutions', p: 'Strategic routes for positioning, naming and message, each one built to close the gap.' },
+  { h: 'Make the decisions', p: 'Choose one route, cut the rest, and defend the choice with evidence.' },
+  { h: 'Derive the idea', p: 'Every brand already holds its idea: in its name, its place, its people. I look for it, I don’t invent it.' },
+  { h: 'Make it visible', p: 'Only then does the identity begin, as proof of the idea, not decoration on top of it.' }
+];
+function renderMind() {
+  main.innerHTML = '<section class="mind"><div class="svc__head grid3"><h2>Mind Behind</h2><p>The thinking before the design: the brief, the market, the audience and the decision behind each brand, step by step.</p></div>' +
+    '<div class="row--cols mind__steps"><h3 class="cols__title">How I think</h3><div class="cols" style="--n:4;row-gap:44px">' +
+      MIND_STEPS.map((st, i) => '<div class="cols__item"><h4><span style="color:var(--mute);font-size:15px;margin-right:10px;">' + String(i + 1).padStart(2, '0') + '</span>' + esc(st.h) + '</h4><p>' + esc(st.p) + '</p></div>').join('') + '</div></div>' +
+    '<h3 class="cols__title" style="margin-top:40px;">Strategies</h3><ul class="mind__list">' +
+      STRATEGIES.map((st, i) => '<li class="mind__item"><a href="#mind/' + st.id + '"><span class="mind__name">' + esc(st.name) + '<span class="mind__from" style="display:block;margin-top:6px;">' + esc(st.sector) + '</span></span><span class="mind__q">' + esc(st.q) + '</span><span class="mind__a">' + esc(st.a) + '</span><span class="mind__go">Read strategy →</span></a></li>').join('') +
+    '</ul></section>';
+  wireCards();
+}
+function fitBig() {
+  const el = document.querySelector('.intro__big'); if (!el) return;
+  const avail = el.parentElement.clientWidth;
+  el.style.setProperty('font-size', '100px', 'important');
+  const w = el.getBoundingClientRect().width;
+  if (w > 0) el.style.setProperty('font-size', (100 * avail / w).toFixed(2) + 'px', 'important');
+}
+window.addEventListener('resize', fitBig);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitBig);
+function renderWork() {
+  const cards = LAYOUT.map((l, i) => {
+    const c = byId[l.id];
+    const pos = l.big ? (i < 3 ? ' pos-a' : ' pos-b') : '';
+    const imgs = c.thumbs.map((t, k) => '<img src="' + src(t) + '" alt="' + (k === 0 ? esc(c.name + ' identity') : '') + '"' + (k === 0 ? ' class="is-on"' : '') + ' loading="' + (i < 3 ? 'eager' : 'lazy') + '">').join('');
+    return '<a class="card' + (l.big ? ' card--big' : '') + (l.wide ? ' card--wide' : '') + (l.half ? ' card--half' : '') + pos + '" href="#' + c.id + '" data-label="' + esc(c.name + ' — ' + c.short + ' · View case +') + '">' +
+      '<span class="media">' + imgs + '</span>' +
+      '<span class="card__cap">' + esc(c.name) + '<span>' + esc(c.short.charAt(0).toUpperCase() + c.short.slice(1)) + '</span></span></a>';
+  }).join('');
+  main.innerHTML =
+    '<section class="intro grid3"><h1 class="intro__big">THE BIG IDEAS</h1></section>' +
+    '<section class="work" aria-label="Selected work">' + cards + '</section>';
+  fitBig();
+  wireCards();
+}
+
+function renderCase(c) {
+  const i = CASES.indexOf(c);
+  const next = CASES[(i + 1) % CASES.length];
+  const rows = c.rows.map((r) => {
+    if (r.t === 'text') return '<div class="row row--text' + (r.right ? ' is-right' : '') + '"><div class="row__text"><h3>' + esc(r.h) + '</h3><p>' + esc(r.p) + '</p></div>' + fig(r.img, r.alt, r.contain) + '</div>';
+    if (r.t === 'video' && r.wide) return '<div class="row row--full row--wfilm"><div class="row__text"><h3>' + esc(r.h) + '</h3><p>' + esc(r.p) + '</p></div>' +
+      '<div class="film__frame"><video preload="none" playsinline poster="' + src(r.poster) + '" src="' + esc(r.video) + '"></video>' +
+      '<button type="button" class="film__play"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0E0E0D"></circle><path d="M10 8l6 4-6 4z" fill="#145CD1"></path></svg>Play film</button></div></div>';
+    if (r.t === 'video') return '<div class="row row--video' + (r.right ? ' is-right' : '') + '"><div class="row__text"><h3>' + esc(r.h) + '</h3><p>' + esc(r.p) + '</p></div>' +
+      '<div class="film__frame film__frame--tall"><video preload="none" playsinline poster="' + src(r.poster) + '" src="' + esc(r.video) + '"></video>' +
+      '<button type="button" class="film__play"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0E0E0D"></circle><path d="M10 8l6 4-6 4z" fill="#145CD1"></path></svg>Play film</button></div></div>';
+    if (r.t === 'cols') return '<div class="row row--cols"><h3 class="cols__title">' + esc(r.h) + '</h3><div class="cols" style="--n:' + r.items.length + '">' + r.items.map((it) => '<div class="cols__item"><h4>' + esc(it.h) + '</h4><p>' + esc(it.p) + '</p></div>').join('') + '</div></div>';
+    if (r.t === 'trio') return '<div class="row row--trio">' + r.imgs.map((n, k) => fig(n, r.alts[k], r.contain)).join('') + (r.cap ? '<p class="cap">' + esc(r.cap) + '</p>' : '') + '</div>';
+    if (r.t === 'tall') return '<div class="row row--tall"><div class="row__text"><h3>' + esc(r.h) + '</h3><p>' + esc(r.p) + '</p></div>' + r.imgs.map((n, k) => fig(n, r.alts[k], r.contain)).join('') + '</div>';
+    if (r.t === 'full') return '<div class="row row--full' + (r.natural ? ' is-natural' : '') + '">' + fig(r.img, r.alt, r.contain) + (r.cap ? '<p class="cap">' + esc(r.cap) + '</p>' : '') + '</div>';
+    return '<div class="row row--pair">' + r.imgs.map((n, k) => fig(n, r.alts[k], r.contain)).join('') + (r.cap ? '<p class="cap">' + esc(r.cap) + '</p>' : '') + '</div>';
+  }).join('');
+  main.innerHTML =
+    '<div class="hero">' + (c.heroVideo ? '<video autoplay muted loop playsinline preload="auto" poster="' + src(c.hero) + '" src="' + esc(c.heroVideo) + '" aria-label="' + esc(c.name + ' — hero film') + '"></video>' : imgTag(c.hero, c.name + ' — hero image', 'loading="eager"')) + '</div>' +
+    '<section class="chead grid3"><p class="chead__num">Case ' + String(i + 1).padStart(2, '0') + ' / ' + String(CASES.length).padStart(2, '0') + '</p>' +
+    '<h1>' + esc(c.name) + '</h1><p class="chead__line">' + esc(c.line) + '</p></section>' +
+    '<section class="story grid3">' +
+      '<div><h2>Challenge</h2><p>' + esc(c.challenge) + '</p></div>' +
+      '<div><h2>Insight</h2><p>' + esc(c.insight) + '</p></div>' +
+      '<div class="is-idea"><h2>Big idea</h2><p>' + esc(c.idea) + '</p></div>' +
+      '<dl class="meta meta--wide">' +
+        '<div><dt>Market</dt><dd>' + esc(c.market) + '</dd></div>' +
+        '<div><dt>Sector</dt><dd>' + esc(c.sector) + '</dd></div>' +
+        '<div><dt>Derived from</dt><dd>' + esc(c.derived) + '</dd></div>' +
+        '<div><dt>My role</dt><dd>' + esc(c.role) + '</dd></div>' +
+      '</dl></section>' +
+    renderFilm(c) +
+    '<section class="rows">' + rows + '</section>' +
+    '<p class="outro">' + esc(c.role.charAt(0).toUpperCase() + c.role.slice(1)) + ' by Mostafa Ibrahime, from analysis to rollout.' + (c.credit ? ' ' + esc(c.credit) : '') + '</p>' +
+    '<a class="next" href="#' + next.id + '" data-label="' + esc(next.name + ' · View case +') + '">' + imgTag(next.hero, 'Next case: ' + next.name) +
+    '<span class="next__label"><span>Next case</span>' + esc(next.name) + '</span></a>';
+  wireCards();
+  wireFilm();
+}
+
+/* Brand film: set a case's `film` to a file such as 'films/coastra.mp4' to switch the placeholder to a player. */
+function renderFilm(c) {
+  const poster = src(c.filmPoster || c.hero);
+  if (!c.film && c.rows.some((r) => r.t === 'video')) return '';
+  if (c.film) {
+    return '<section class="film" aria-label="' + esc(c.name) + ' brand film">' +
+      '<div class="film__head"><h2>Brand film</h2><span>' + esc(c.name) + '</span></div>' +
+      '<div class="film__frame"><video preload="none" playsinline poster="' + poster + '" src="' + esc(c.film) + '"></video>' +
+      '<button type="button" class="film__play"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0E0E0D"></circle><path d="M10 8l6 4-6 4z" fill="#145CD1"></path></svg>Play brand film</button></div></section>';
+  }
+  return '<section class="film" aria-label="' + esc(c.name) + ' brand film">' +
+    '<div class="film__head"><h2>Brand film</h2><span>' + esc(c.name) + '</span></div>' +
+    '<div class="film__frame"><img src="' + poster + '" alt="" loading="lazy">' +
+    '<p class="film__soon"><span>Brand film</span><b>Coming soon</b></p></div></section>';
+}
+function wireFilm() {
+  document.querySelectorAll('.film__frame').forEach((frame) => {
+    const btn = frame.querySelector('.film__play');
+    const vid = frame.querySelector('video');
+    if (!btn || !vid) return;
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.film__frame video').forEach((v) => { if (v !== vid) v.pause(); });
+      vid.controls = true;
+      const p = vid.play();
+      frame.classList.add('is-playing');
+      if (p && p.catch) p.catch(() => { frame.classList.remove('is-playing'); });
+    });
+  });
+}
+
+function renderAbout() {
+  main.innerHTML =
+    '<section class="about grid3">' +
+    '<figure class="about__photo"><img src="' + src('portrait') + '" alt="Portrait of Mostafa Ibrahime" loading="eager"></figure>' +
+    '<p class="about__lead">Brand Strategist who thinks beyond design, treating every brand as a business challenge to be solved through deep, wide-ranging strategic thinking. Starts with the market, not the logo: analyses market data, competitors, audience behaviour and commercial goals, then connects them into a clear strategic direction and one strong Big Idea that shifts the market in the brand’s favour. Turns that strategy into fresh concepts and compelling brand stories that hold together across identity, packaging and spaces.</p>' +
+    '<div class="about__col"><h2>What I do</h2><ul><li>Brand strategy</li><li>Market &amp; business analysis</li><li>Positioning &amp; Brand DNA</li><li>Big Idea &amp; concept development</li><li>Rebranding &amp; identity systems</li><li>Leading branding teams</li></ul></div>' +
+    '<div class="about__col"><h2>Teaching &amp; reach</h2><ul>' +
+      '<li>Brand Strategy workshops, Mobtaker Academy</li><li>Brand Strategy workshops, Shoair School</li>' +
+      '<li>Brands live in the GCC, Egypt, Germany, Australia, the USA, Sweden and Spain</li></ul></div>' +
+    '</section>';
+  wireCards();
+}
+
+/* Router: plain #name hashes */
+function route() {
+  const h = location.hash.replace('#', '');
+  const page = $('#hdrPage');
+  document.querySelectorAll('[data-nav]').forEach((a) => a.classList.toggle('is-on', a.dataset.nav === (h.startsWith('mind') ? 'mind' : ['about', 'services'].includes(h) ? h : 'work')));
+  if (h.startsWith('mind/') && stById[h.slice(5)]) { const st = stById[h.slice(5)]; renderStrategy(st); page.textContent = 'Mind Behind'; document.title = st.name + ' strategy — Mostafa Ibrahime'; }
+  else if (h === 'mind') { renderMind(); page.textContent = 'Mind Behind'; document.title = 'Mind Behind — Mostafa Ibrahime'; }
+  else if (h === 'services') { renderServices(); page.textContent = 'Services'; document.title = 'Services — Mostafa Ibrahime'; }
+  else if (h === 'about') { renderAbout(); page.textContent = 'About'; document.title = 'About — Mostafa Ibrahime'; }
+  else if (byId[h]) { renderCase(byId[h]); page.textContent = byId[h].name; document.title = byId[h].name + ' — Mostafa Ibrahime'; }
+  else { renderWork(); page.textContent = 'Work'; document.title = 'Mostafa Ibrahime — Brand Strategist'; }
+  window.scrollTo(0, 0);
+  hideCursor();
+}
+window.addEventListener('hashchange', route);
+$('#toContact').addEventListener('click', () => $('#contact').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }));
+
+/* Header hides on scroll down, returns on scroll up */
+let lastY = 0;
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  $('#hdr').classList.toggle('is-hidden', y > lastY && y > 120);
+  lastY = y;
+}, { passive: true });
+
+/* Cursor label + thumbnail cycling, fine pointers only */
+const cursor = $('#cursor');
+const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
+const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+let cycleTimer = null;
+function hideCursor() { cursor.classList.remove('is-on'); clearInterval(cycleTimer); }
+if (fine) {
+  window.addEventListener('mousemove', (e) => { cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px'; }, { passive: true });
+}
+function wireCards() {
+  if (!fine) return;
+  document.querySelectorAll('[data-label]').forEach((el) => {
+    el.addEventListener('mouseenter', () => {
+      cursor.textContent = el.dataset.label; cursor.classList.add('is-on');
+      const imgs = [...el.querySelectorAll('.media img')];
+      if (imgs.length > 1 && !still) {
+        let k = 0;
+        cycleTimer = setInterval(() => { imgs[k].classList.remove('is-on'); k = (k + 1) % imgs.length; imgs[k].classList.add('is-on'); }, 1100);
+      }
+    });
+    el.addEventListener('mouseleave', () => {
+      hideCursor();
+      const imgs = [...el.querySelectorAll('.media img')];
+      imgs.forEach((im, k) => im.classList.toggle('is-on', k === 0));
+    });
+  });
+}
+route();
+</script>
+</body>
+</html>
