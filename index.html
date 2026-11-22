@@ -294,6 +294,59 @@ a, button { transition: color .2s ease, background-color .2s ease; }
   .next { aspect-ratio: 4 / 3; }
   .foot__base { flex-direction: column; gap: 8px; }
 }
+/* 40+ brands cloud (home) */
+.cloud { position: relative; height: 340vh; margin: 0 calc(var(--gap) * -1); }
+.cloud__stick { position: sticky; top: 0; height: 100vh; overflow: hidden; }
+.cloud__num { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); margin: 0; font-size: 24vw; font-weight: 700; letter-spacing: -0.06em; line-height: .8; white-space: nowrap; color: var(--ink); pointer-events: none; font-variant-numeric: tabular-nums; }
+.cloud__num sup { font-size: .45em; vertical-align: .9em; color: var(--signal); margin-left: .02em; }
+.cloud__tile { position: absolute; left: 50%; top: 50%; display: block; border-radius: 10px; overflow: hidden; background: var(--wash); will-change: transform, opacity; box-shadow: 0 10px 30px rgba(14,14,13,.10); }
+.cloud__tile img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.cloud__copy { position: absolute; left: var(--gap); right: var(--gap); bottom: 28px; display: flex; justify-content: space-between; align-items: end; gap: 24px; pointer-events: none; }
+.cloud__copy p { max-width: 36ch; }
+.cloud__kick { font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--mute); margin-bottom: 8px !important; }
+.cloud__chips { display: flex; gap: 8px; }
+.cloud__chips span { border: 1px solid rgba(0,0,0,.18); border-radius: 999px; padding: 7px 14px; font-size: 15px; background: rgba(255,255,255,.7); }
+.cloud__hint { position: absolute; left: 50%; top: 92px; transform: translateX(-50%); font-size: 15px; color: var(--mute); }
+
+/* How I think: from noise to one idea (Mind Behind) */
+.path { position: relative; height: 620vh; margin: 0 calc(var(--gap) * -1) 96px; background: var(--ink); color: #fff; }
+.path__stick { position: sticky; top: 0; height: 100vh; overflow: hidden; }
+.path canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.path__hud { position: absolute; left: var(--gap); right: var(--gap); top: 96px; display: flex; justify-content: space-between; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; color: rgba(255,255,255,.55); }
+.path__hud b { color: #fff; font-weight: 400; }
+.path__steps { position: absolute; left: var(--gap); bottom: 72px; width: min(560px, calc(100% - var(--gap) * 2)); height: 220px; }
+.path__step { position: absolute; left: 0; bottom: 0; opacity: 0; transform: translateY(24px); transition: opacity .5s ease, transform .7s cubic-bezier(.19,1,.22,1); }
+.path__step.is-on { opacity: 1; transform: none; }
+.path__step h3 { font-size: clamp(34px, 4.4vw, 64px); line-height: 1; letter-spacing: -0.035em; font-weight: 400; margin-bottom: 16px; }
+.path__step h3 span { display: block; font-size: 15px; letter-spacing: 0.04em; color: var(--signal); margin-bottom: 14px; }
+.path__step p { color: rgba(255,255,255,.7); max-width: 44ch; }
+.path__bar { position: absolute; left: var(--gap); right: var(--gap); bottom: 32px; height: 1px; background: rgba(255,255,255,.18); }
+.path__bar i { position: absolute; left: 0; top: 0; height: 1px; width: 0; background: var(--signal); }
+.path__tick { position: absolute; top: -3px; width: 1px; height: 7px; background: rgba(255,255,255,.35); }
+
+/* Start-a-project portal (home, before the footer) */
+.portal { position: relative; height: 260vh; margin: 0 calc(var(--gap) * -1); }
+.portal__stick { position: sticky; top: 0; height: 100vh; overflow: hidden; display: grid; place-items: center; }
+.portal__ring { position: absolute; left: 50%; top: 50%; width: 180px; height: 180px; transform: translate(-50%, -50%); border-radius: 50%; border: 2px solid var(--ink); }
+.portal__fill { position: absolute; inset: 0; background: var(--signal); clip-path: circle(26px at 50% 50%); }
+.portal__hint { position: absolute; z-index: 1; left: 50%; top: calc(50% + 130px); transform: translateX(-50%); text-align: center; font-size: 15px; color: var(--mute); white-space: nowrap; }
+.portal__hint b { display: block; font-weight: 400; color: var(--ink); font-size: clamp(28px, 3vw, 44px); letter-spacing: -0.03em; margin-top: 6px; font-variant-numeric: tabular-nums; }
+.portal__end { position: relative; z-index: 2; text-align: center; color: #fff; opacity: 0; transform: translateY(20px); transition: opacity .5s ease, transform .7s cubic-bezier(.19,1,.22,1); pointer-events: none; padding: 0 var(--gap); }
+.portal.is-open .portal__end { opacity: 1; transform: none; pointer-events: auto; }
+.portal__end p { font-size: clamp(36px, 5.2vw, 80px); line-height: 1; letter-spacing: -0.04em; font-weight: 400; max-width: 16ch; margin: 0 auto 36px; }
+.portal__end div { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.portal__end a { border: 1px solid rgba(255,255,255,.7); border-radius: 999px; padding: 14px 26px; font-size: 18px; }
+.portal__end a:hover { background: #fff; color: var(--signal); }
+
+@media (max-width: 760px) {
+  .cloud { height: 300vh; }
+  .cloud__num { font-size: 40vw; }
+  .cloud__copy { flex-direction: column; align-items: start; bottom: 20px; }
+  .cloud__hint { top: 80px; }
+  .path__hud { top: 80px; }
+  .path__sub { display: none; }
+  .path__steps { bottom: 64px; height: 240px; }
+}
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; animation: none !important; }
 }
@@ -879,11 +932,12 @@ const MIND_STEPS = [
 ];
 function renderMind() {
   main.innerHTML = '<section class="mind"><div class="svc__head grid3"><h2>Mind Behind</h2><p>The thinking before the design: the brief, the market, the audience and the decision behind each brand, step by step.</p></div>' +
-    '<div class="row--cols mind__steps"><h3 class="cols__title">How I think</h3><div class="cols" style="--n:4;row-gap:44px">' +
-      MIND_STEPS.map((st, i) => '<div class="cols__item"><h4><span style="color:var(--mute);font-size:15px;margin-right:10px;">' + String(i + 1).padStart(2, '0') + '</span>' + esc(st.h) + '</h4><p>' + esc(st.p) + '</p></div>').join('') + '</div></div>' +
+    (still ? '<div class="row--cols mind__steps"><h3 class="cols__title">How I think</h3><div class="cols" style="--n:4;row-gap:44px">' +
+      MIND_STEPS.map((st, i) => '<div class="cols__item"><h4><span style="color:var(--mute);font-size:15px;margin-right:10px;">' + String(i + 1).padStart(2, '0') + '</span>' + esc(st.h) + '</h4><p>' + esc(st.p) + '</p></div>').join('') + '</div></div>' : renderPath()) +
     '<h3 class="cols__title" style="margin-top:40px;">Strategies</h3><ul class="mind__list">' +
       STRATEGIES.map((st, i) => '<li class="mind__item"><a href="#mind/' + st.id + '"><span class="mind__name">' + esc(st.name) + '<span class="mind__from" style="display:block;margin-top:6px;">' + esc(st.sector) + '</span></span><span class="mind__q">' + esc(st.q) + '</span><span class="mind__a">' + esc(st.a) + '</span><span class="mind__go">Read strategy →</span></a></li>').join('') +
     '</ul></section>';
+  initPath();
   wireCards();
 }
 function fitBig() {
@@ -906,8 +960,11 @@ function renderWork() {
   }).join('');
   main.innerHTML =
     '<section class="intro grid3"><h1 class="intro__big">THE BIG IDEAS</h1></section>' +
-    '<section class="work" aria-label="Selected work">' + cards + '</section>';
+    '<section class="work" aria-label="Selected work">' + cards + '</section>' +
+    renderCloud() + renderPortal();
   fitBig();
+  initCloud();
+  initPortal();
   wireCards();
 }
 
@@ -994,10 +1051,192 @@ function renderAbout() {
   wireCards();
 }
 
+/* Scroll-driven sections: one animation loop for the cloud, the thinking path and the portal */
+const FX = [];
+let fxRaf = 0;
+const clamp01 = (v) => Math.min(1, Math.max(0, v));
+const smooth = (v) => v * v * (3 - 2 * v);
+function fxLoop(t) { FX.forEach((f) => f(t)); fxRaf = FX.length ? requestAnimationFrame(fxLoop) : 0; }
+function fxStart() { if (!fxRaf && FX.length) fxRaf = requestAnimationFrame(fxLoop); }
+function scrollProgress(el) { const r = el.getBoundingClientRect(); return clamp01(-r.top / Math.max(1, r.height - innerHeight)); }
+const ptr = { x: 0, y: 0, sx: 0, sy: 0 };
+window.addEventListener('mousemove', (e) => { ptr.x = e.clientX / innerWidth - .5; ptr.y = e.clientY / innerHeight - .5; }, { passive: true });
+
+/* 1 · 40+ brands: the work gathers into one sphere as you scroll */
+function cloudImages() {
+  const per = Math.ceil(40 / CASES.length), out = [];
+  CASES.forEach((c) => {
+    const pool = [c.hero, ...c.thumbs];
+    c.rows.forEach((r) => { if (r.img && !r.contain) pool.push(r.img); if (r.imgs && !r.contain) pool.push(...r.imgs); });
+    [...new Set(pool)].filter(Boolean).slice(0, per).forEach((n) => out.push({ n, c }));
+  });
+  return out.slice(0, 40);
+}
+function renderCloud() {
+  const tiles = cloudImages().map((t) => '<a class="cloud__tile" href="#' + t.c.id + '" tabindex="-1" data-label="' + esc(t.c.name + ' · View case +') + '"><img src="' + src(t.n) + '" alt="" loading="lazy" decoding="async"></a>').join('');
+  return '<section class="cloud" aria-label="40+ brands built">' +
+    '<div class="cloud__stick"><p class="cloud__num" aria-hidden="true"><span>0</span><sup>+</sup></p>' +
+    '<div class="cloud__field" aria-hidden="true">' + tiles + '</div>' +
+    '<p class="cloud__hint" aria-hidden="true">Keep scrolling</p>' +
+    '<div class="cloud__copy"><div><p class="cloud__kick">Brands built</p><p>Strategy, concepts and identities for 40+ brands across the GCC, Egypt, Europe, Australia and the USA.</p></div>' +
+    '<p class="cloud__chips"><span>B2C</span><span>B2B</span><span>B2G</span></p></div></div></section>';
+}
+function initCloud() {
+  const sec = $('.cloud'); if (!sec) return;
+  const tiles = [...sec.querySelectorAll('.cloud__tile')], n = tiles.length;
+  const num = sec.querySelector('.cloud__num span'), numBox = sec.querySelector('.cloud__num'), hint = sec.querySelector('.cloud__hint');
+  numBox.style.zIndex = 999;
+  const golden = Math.PI * (3 - Math.sqrt(5));
+  const pts = tiles.map((_, i) => {
+    const y = 1 - 2 * (i + .5) / n, r = Math.sqrt(1 - y * y), th = i * golden;
+    const sphere = [Math.cos(th) * r, y, Math.sin(th) * r];
+    const far = 2.4 + Math.random() * 2.2, jx = (Math.random() - .5) * 1.6, jy = (Math.random() - .5) * 1.6;
+    return { sphere, start: [sphere[0] * far + jx, sphere[1] * far + jy, sphere[2] * far - 1.5] };
+  });
+  let lastW = 0;
+  const step = (t) => {
+    if (!sec.isConnected) return;
+    const vw = innerWidth, vh = innerHeight;
+    const R = Math.min(vw, vh) * (vw < 760 ? .4 : .38);
+    if (vw !== lastW) { lastW = vw; const w = R * (vw < 760 ? .42 : .34); tiles.forEach((el) => { el.style.width = w + 'px'; el.style.height = (w * .72) + 'px'; }); }
+    const p = still ? 1 : scrollProgress(sec);
+    const a = smooth(clamp01(p / .45));
+    ptr.sx += (ptr.x - ptr.sx) * .06; ptr.sy += (ptr.y - ptr.sy) * .06;
+    const yaw = (still ? .4 : p * Math.PI * 1.7 + (t || 0) * .00006) + ptr.sx * .9;
+    const tilt = -.28 + ptr.sy * .6;
+    const cy = Math.cos(yaw), sy = Math.sin(yaw), cx = Math.cos(tilt), sx = Math.sin(tilt);
+    const persp = Math.max(vw, vh) * 1.1;
+    pts.forEach((q, i) => {
+      let x = (q.start[0] + (q.sphere[0] - q.start[0]) * a) * R;
+      let y = (q.start[1] + (q.sphere[1] - q.start[1]) * a) * R;
+      let z = (q.start[2] + (q.sphere[2] - q.start[2]) * a) * R;
+      const x1 = x * cy - z * sy, z1 = x * sy + z * cy;
+      const y2 = y * cx - z1 * sx, z2 = y * sx + z1 * cx;
+      const f = persp / (persp - z2);
+      const depth = clamp01((z2 + R) / (2 * R));
+      const el = tiles[i];
+      el.style.transform = 'translate(-50%,-50%) translate3d(' + (x1 * f).toFixed(1) + 'px,' + (y2 * f).toFixed(1) + 'px,0) scale(' + (f * (.72 + .28 * depth)).toFixed(3) + ')';
+      el.style.opacity = ((.25 + .75 * depth) * (.15 + .85 * a)).toFixed(3);
+      el.style.zIndex = z2 > R * .55 ? 1000 + Math.round(z2) : Math.round(z2 + R * 2);
+      el.style.filter = depth < .45 ? 'grayscale(1) blur(' + ((.45 - depth) * 4).toFixed(1) + 'px)' : 'none';
+    });
+    num.textContent = Math.round(40 * smooth(clamp01(p / .42)));
+    hint.style.opacity = clamp01(1 - p * 8);
+  };
+  if (still) { step(0); window.addEventListener('resize', () => step(0)); return; }
+  FX.push(step); fxStart();
+}
+
+/* 2 · How I think: market noise becomes one idea, step by step (Mind Behind) */
+function renderPath() {
+  return '<section class="path" aria-label="How I think"><div class="path__stick"><canvas aria-hidden="true"></canvas>' +
+    '<div class="path__hud"><span>How I think<span class="path__sub"> · from noise to one idea</span></span><span><b>01</b> / ' + String(MIND_STEPS.length).padStart(2, '0') + '</span></div>' +
+    '<div class="path__steps">' + MIND_STEPS.map((st, i) => '<article class="path__step' + (i === 0 ? ' is-on' : '') + '"><h3><span>' + String(i + 1).padStart(2, '0') + '</span>' + esc(st.h) + '</h3><p>' + esc(st.p) + '</p></article>').join('') + '</div>' +
+    '<div class="path__bar">' + MIND_STEPS.map((_, i) => '<span class="path__tick" style="left:' + (i / (MIND_STEPS.length - 1) * 100) + '%"></span>').join('') + '<i></i></div>' +
+    '</div></section>';
+}
+function initPath() {
+  const sec = $('.path'); if (!sec) return;
+  const cv = sec.querySelector('canvas'), ctx = cv.getContext('2d');
+  const steps = [...sec.querySelectorAll('.path__step')], count = sec.querySelector('.path__hud b'), bar = sec.querySelector('.path__bar i');
+  const S_N = MIND_STEPS.length;
+  let N = 0, W = 0, H = 0, dpr = 1, rnd = [], forms = [], cur = null;
+  const blue = [20, 92, 209];
+  function layout() {
+    dpr = Math.min(2, devicePixelRatio || 1);
+    W = cv.clientWidth; H = cv.clientHeight; cv.width = W * dpr; cv.height = H * dpr;
+    const mobile = W < 760;
+    N = mobile ? 460 : 900;
+    while (rnd.length < N) rnd.push([Math.random(), Math.random(), Math.random(), Math.random()]);
+    const cx = mobile ? W / 2 : W * .62, cy = mobile ? H * .38 : H * .47, S = Math.min(W, H) * (mobile ? .3 : .3);
+    const F = [];
+    for (let k = 0; k < S_N; k++) {
+      const arr = new Float32Array(N * 4);
+      for (let i = 0; i < N; i++) {
+        const [r1, r2, r3, r4] = rnd[i]; let x, y, al = .55, b = 0;
+        const ang = r2 * Math.PI * 2;
+        if (k === 0) { x = r1 * W; y = r2 * H; al = .5 + r3 * .4; }
+        else if (k === 1) { const side = i % 2 ? 1 : -1; x = cx + side * (S * .32 + Math.pow(r1, .7) * S * 1.1); y = cy + (r3 - .5) * S * 2.4; al = .5; }
+        else if (k === 2) { if (i % 9 === 0) { x = cx + Math.cos(ang) * S * .5; y = cy + Math.sin(ang) * S * .5; b = 1; al = .9; } else { const rad = S * .62 + Math.pow(r1, .8) * S * .9; x = cx + Math.cos(ang) * rad * 1.3; y = cy + Math.sin(ang) * rad; al = .45; } }
+        else if (k === 3) { const cols = mobile ? 20 : 30, rows = Math.ceil(N / cols); x = cx - S * 1.25 + (i % cols) / (cols - 1) * S * 2.5; y = cy - S * .95 + Math.floor(i / cols) / (rows - 1) * S * 1.9; al = .7; }
+        else if (k === 4) { const g = i % 3, rad = Math.sqrt(r1) * S * .36; x = cx + (g - 1) * S * .95 + Math.cos(ang) * rad; y = cy + Math.sin(ang) * rad; al = .75; }
+        else if (k === 5) { const g = i % 3; if (g === 1) { const rad = Math.sqrt(r1) * S * .42; x = cx + Math.cos(ang) * rad; y = cy + Math.sin(ang) * rad; b = 1; al = .95; } else { x = cx + (g - 1) * S * 2.1 + (r3 - .5) * S * .9; y = cy + (r4 - .5) * S * 1.8; al = .12; } }
+        else if (k === 6) { const rad = Math.sqrt(r1) * S * .1; x = cx + Math.cos(ang) * rad; y = cy + Math.sin(ang) * rad; b = 1; al = 1; }
+        else { if (i % 4 === 0) { const rad = Math.sqrt(r1) * S * .17; x = cx + Math.cos(ang) * rad; y = cy + Math.sin(ang) * rad; } else { const rad = S * .62 + (r3 - .5) * S * .045; x = cx + Math.cos(ang) * rad; y = cy + Math.sin(ang) * rad; } b = 1; al = 1; }
+        arr[i * 4] = x; arr[i * 4 + 1] = y; arr[i * 4 + 2] = al; arr[i * 4 + 3] = b;
+      }
+      F.push(arr);
+    }
+    forms = F;
+    if (!cur || cur.length !== N * 4) cur = Float32Array.from(F[0]);
+  }
+  layout();
+  window.addEventListener('resize', () => { if (sec.isConnected) layout(); });
+  let lastOn = -1;
+  const step = (t) => {
+    if (!sec.isConnected) return;
+    const r = sec.getBoundingClientRect();
+    if (r.bottom < 0 || r.top > innerHeight) return;
+    const p = still ? 1 : scrollProgress(sec);
+    const s = clamp01(p * 1.06) * (S_N - 1);
+    const k = Math.min(S_N - 2, Math.floor(s)), f = smooth(clamp01(s - k));
+    const A = forms[k], B = forms[k + 1];
+    const on = Math.min(S_N - 1, Math.round(s));
+    if (on !== lastOn) { lastOn = on; steps.forEach((el, i) => el.classList.toggle('is-on', i === on)); count.textContent = String(on + 1).padStart(2, '0'); }
+    bar.style.width = (clamp01(p * 1.06) * 100) + '%';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, W, H);
+    const jit = Math.max(0, 1 - s) * 4, ease = still ? 1 : .14, tt = (t || 0) * .0012;
+    const sz = W < 760 ? 1.6 : 1.9;
+    for (let i = 0; i < N; i++) {
+      const o = i * 4;
+      for (let c = 0; c < 4; c++) { const tg = A[o + c] + (B[o + c] - A[o + c]) * f; cur[o + c] += (tg - cur[o + c]) * ease; }
+      const x = cur[o] + Math.sin(tt + i) * jit, y = cur[o + 1] + Math.cos(tt * 1.3 + i) * jit, b = cur[o + 3];
+      const cr = Math.round(255 + (blue[0] - 255) * b), cg = Math.round(255 + (blue[1] - 255) * b), cb = Math.round(255 + (blue[2] - 255) * b);
+      ctx.fillStyle = 'rgba(' + cr + ',' + cg + ',' + cb + ',' + cur[o + 2].toFixed(2) + ')';
+      const d = sz + b * .9;
+      ctx.fillRect(x - d / 2, y - d / 2, d, d);
+    }
+  };
+  if (still) { step(0); return; }
+  FX.push(step); fxStart();
+}
+
+/* 3 · Start a project: the mark opens into the brand blue as you scroll */
+function renderPortal() {
+  return '<section class="portal" aria-label="Start a project"><div class="portal__stick">' +
+    '<span class="portal__ring" aria-hidden="true"></span><span class="portal__fill" aria-hidden="true"></span>' +
+    '<p class="portal__hint" aria-hidden="true">Keep scrolling to start a project<b>0%</b></p>' +
+    '<div class="portal__end"><p>Let’s find the idea your brand already holds.</p><div>' +
+    '<a href="mailto:mostafaibrahime110@gmail.com">Email me</a><a href="https://wa.me/201015171066" target="_blank" rel="noopener">WhatsApp</a></div></div>' +
+    '</div></section>';
+}
+function initPortal() {
+  const sec = $('.portal'); if (!sec) return;
+  const ring = sec.querySelector('.portal__ring'), fill = sec.querySelector('.portal__fill'), hint = sec.querySelector('.portal__hint'), pct = hint.querySelector('b');
+  const step = () => {
+    if (!sec.isConnected) return;
+    const p = still ? 1 : scrollProgress(sec);
+    const diag = Math.hypot(innerWidth, innerHeight);
+    const open = clamp01(p / .8);
+    const g = smooth(clamp01((open - .2) / .8));
+    const rs = 180 + smooth(open) * (diag * 1.15 - 180);
+    ring.style.width = ring.style.height = rs.toFixed(1) + 'px';
+    ring.style.opacity = (1 - g).toFixed(3);
+    fill.style.clipPath = 'circle(' + (26 + g * (diag / 2 * 1.05 - 26)).toFixed(1) + 'px at 50% 50%)';
+    hint.style.opacity = clamp01(1 - (open - .35) * 5).toFixed(3);
+    pct.textContent = Math.round(open * 100) + '%';
+    sec.classList.toggle('is-open', open >= 1);
+  };
+  if (still) { step(); return; }
+  FX.push(step); fxStart();
+}
+
 /* Router: plain #name hashes */
 function route() {
   const h = location.hash.replace('#', '');
   const page = $('#hdrPage');
+  FX.length = 0;
   document.querySelectorAll('[data-nav]').forEach((a) => a.classList.toggle('is-on', a.dataset.nav === (h.startsWith('mind') ? 'mind' : ['about', 'services'].includes(h) ? h : 'work')));
   if (h.startsWith('mind/') && stById[h.slice(5)]) { const st = stById[h.slice(5)]; renderStrategy(st); page.textContent = 'Mind Behind'; document.title = st.name + ' strategy — Mostafa Ibrahime'; }
   else if (h === 'mind') { renderMind(); page.textContent = 'Mind Behind'; document.title = 'Mind Behind — Mostafa Ibrahime'; }
